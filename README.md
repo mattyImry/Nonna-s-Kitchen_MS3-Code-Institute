@@ -22,10 +22,24 @@ Features that I want to implement are:
 ### **_Structure_**
 
 * The recipes will be categorised and stored in three main courses type: first course, main course and dessert.  
+ 
+* A list of all recipes stored in the website will be shown to all the Users in the main page. 
+
+* The Users will be able to view all the recipes that they have created via "My profile" page.
+ 
+
+### **_Skeleton_**
+
 * The recipes will be presented with all the informations needed for the preparation on a card style format for easy navigation. 
-* A list of all recipes stored in the website will be shown to all the users in the main page
 
+* To add the recipes to the app a minimalistic style form will be use.  
 
+* A search function will be present for all the Users, logged in or not, in the main page to search the recipes database.
 
+* The Users can use the Navigation bar to navigate the different pages withing the website.
+
+* A contact page link will always be present in the footer.
+
+* The logo and "Home" link in the Navigation bar will redirect the Users to the main page.
 
 
