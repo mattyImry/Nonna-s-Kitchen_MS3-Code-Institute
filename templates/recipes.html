@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonna's Kitchen</title>
+</head>
+<body>
+    {% for recipe in recipes %}
+        {{ recipe.type }}<br>
+        {{ recipe.recipe_name }}<br>
+        {{ recipe.difficulty }}<br>
+        {{ recipe.prep_time }}<br>
+        {{ recipe.cook_time }}<br>
+        {{ recipe.serving }}<br>
+        {{ recipe.ingredients }}<br>
+        {{ recipe.preparation }}<br>
+        {{ recipe.is_vegetarian }}<br>
+        {{ recipe.image }}<br>
+    {% endfor %}
+</body>
+</html>
