@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Princess+Sofia&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+    padding: 0 25px;
+    
+}
+
+/*NAVBAR*/
+
+.text-logo {
+    font-family: 'Princess Sofia', sans-serif;
+}
