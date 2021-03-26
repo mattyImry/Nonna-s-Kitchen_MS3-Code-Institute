@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nonna's Kitchen</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I am extending the base plate!</h2>
     {% for recipe in recipes %}
         {{ recipe.type }}<br>
         {{ recipe.recipe_name }}<br>
@@ -18,5 +14,7 @@
         {{ recipe.is_vegetarian }}<br>
         {{ recipe.image }}<br>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
+
+
