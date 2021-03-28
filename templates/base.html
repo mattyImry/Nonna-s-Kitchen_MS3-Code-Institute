@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Font awesome  minified CSS -->
+    <!--FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" type="text/css"/>
-    <!--Materialize minified CSS -->
+    <!--MATERIALIAZE MINIFIED CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <!--custom style sheet-->
+    <!--CUSTOM STYLE SHEETt-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
-    <!--favicom-->
+    <!--FAVICOM-->
     <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
     
     {% block style%}
@@ -20,10 +20,10 @@
 </head>
 <body>
     <header>
-        <!--navbar large view -->
-        <nav class="nav-extended text-shadow  brown lighten-2">
+        <!--NAVBAR LARGE VIEW-->
+        <nav class="nav-extended text-shadow brown lighten-2">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo text-logo"><h5 >Nonna's Kitchen</h5></a>
+                <a href="{{ url_for('index') }}" class="brand-logo"><h5 class="title" >Nonna's Kitchen</h5></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-chevron-circle-down"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -31,12 +31,12 @@
                     <li><a href="#">Add Recipe</a></li>
                     <li><a href="#">Log Out</a></li>
                     <li><a href="#">Log In</a></li>
-                    <li><a href="#">Register</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
-        <!--navbar mobile view-->
+        <!--NAVBAR MOBILE VIEW-->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align ">Menu</h4></li>
             <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -44,7 +44,7 @@
             <li><a href="#">Add Recipe</a></li>
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="#">Contact Us</a></li>
         </ul>
     </header>
@@ -53,32 +53,34 @@
     {% block content %}
     {% endblock %}
 
+    <!--FOOTER-->
     <footer class="page-footer text-shadow  brown lighten-2 ">
-          
-          <div class="footer-copyright ">
-            <div class="container footer-elements">
+        <div class="footer-copyright ">
+            <div class="container footer-elements valign-wrappe">
                 <div class="row row-footer">
-                    
                     <div class="s12 center-align">
-                        <div class="copyright">
-                            © 2021 
-                        </div>
                         <div class="social">
-                            <a  href="https://www.linkedin.com/in/matteo-imeri-5995021b7/"><i class="fab fa-linkedin fa-3x footer-icons"></i></a>
-                            <a  href="https://github.com/mattyImry"><i class="fab fa-github fa-3x footer-icons"></i></a>
-                            <a  href="#"><i class="fas fa-envelope-square fa-3x footer-icons"></i></a>
+                            <a href="https://www.linkedin.com/in/matteo-imeri-5995021b7/"><i class="fab fa-linkedin fa-3x footer-icons "></i></a>   
+                            <a href="https://github.com/mattyImry"><i class="fab fa-github fa-3x footer-icons  t "></i></a>
+                            <a href="#"><i class="fas fa-envelope-square fa-3x footer-icons "></i></a>
+                        </div>
+                        <div class="copyright">
+                            © <span class="year"></span> Copyright: Imry
                         </div>
                     </div>
                 </div>
             </div>
-          </div>
-        </footer>
-    <!--Jquery script -->
+        </div>
+    </footer>
+
+    <!--JQUERY SCRIPT -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!--Javascript script to be use for Materialize -->
+
+    <!--JAVASCRIPT TO ALOOW MATERIALIZE FUNCTIONALITIES -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--Javascript custom script-->
+
+    <!--JAVASCRIPT CUSTOM SCRIPT-->
     <script src="{{ url_for('static', filename='js/script.js')}}"></script>
 
     {% block script %}
