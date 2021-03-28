@@ -63,3 +63,9 @@ body {
     color: #795548;
 
 }
+
+/* FLASH MESSAGES*/
+
+.flash-text{
+    margin-top: 35px;
+}

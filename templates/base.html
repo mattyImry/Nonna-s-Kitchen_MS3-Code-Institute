@@ -49,9 +49,23 @@
         </ul>
     </header>
 
-   
-    {% block content %}
-    {% endblock %}
+    <section>
+        <!--Flash messages-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages%}
+                    <div class="row flash-messages">
+                        <h4 class="brown-text darken-4 center-align flash-text">{{ message }}</h4>
+                    </div>
+                {% endfor%}
+            {% endif %}
+        {% endwith %}
+
+    </section>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <!--FOOTER-->
     <footer class="page-footer text-shadow  brown lighten-2 ">
