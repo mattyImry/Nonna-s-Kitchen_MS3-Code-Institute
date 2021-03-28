@@ -16,3 +16,23 @@ body {
 .text-logo {
     font-family: 'Princess Sofia', sans-serif;
 }
+
+/*FOOTER*/
+
+.page-footer {
+    padding: 0;
+}
+
+.copyright {
+    padding-bottom: 7px;
+}
+
+
+.row-footer {
+    margin-bottom: 0;
+}
+
+.footer-icons {
+    padding: 0 20px;
+    color: #448aff;
+}
