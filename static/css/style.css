@@ -2,8 +2,14 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    position: relative;
     min-height: 100vh;
+    position: relative;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 92px;
 }
 
 .text-shadow {
@@ -33,10 +39,11 @@ body {
 }
 
 .page-footer {
+    padding: 0;
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 0;
+    height: 92px;
 }
 
 
@@ -48,7 +55,7 @@ body {
 
 .title-register {
     font-weight: 600;
-    margin: 20px 0;
+    margin-top: 35px;
 }
 
 .btn-register {
@@ -61,7 +68,10 @@ body {
     border: 3px solid ;
     border-radius: 20px;
     color: #795548;
+}
 
+.row-form-register {
+    margin-top: 50px;
 }
 
 /* FLASH MESSAGES*/
@@ -69,3 +79,7 @@ body {
 .flash-text{
     margin-top: 35px;
 }
+
+
+/*MEDIA QUERY*/
+
