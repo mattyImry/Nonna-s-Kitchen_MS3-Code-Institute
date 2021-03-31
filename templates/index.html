@@ -12,6 +12,8 @@
         {{ recipe.ingredients }}<br>
         {{ recipe.preparation }}<br>
         {{ recipe.is_vegetarian }}<br>
+        <img class="content gallery-image materialboxed" alt="{{recipe.recipe_name}} image" src="{{ recipe.image }}">
+        {{ recipe.author }}<br>
         {{ recipe.image }}<br>
     {% endfor %}
 

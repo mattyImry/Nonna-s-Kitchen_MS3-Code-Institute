@@ -53,6 +53,7 @@ def register():
     return render_template("register.html")
 
 
+# LOGIN PAGE
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -63,13 +64,13 @@ def login():
         if existing_user:
             # check if password match user
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 # if username and password match create session cookie
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome back {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
-                        "myprofile", username=session["user"]))
+                            "myprofile", username=session["user"]))
             else:
                 # password no matched
                 flash("Incorrect Username or password")
@@ -83,13 +84,26 @@ def login():
     return render_template("login.html")
 
 
+# PROFILE'USER PAGE
 @app.route("/myprofile/<username>", methods=["GET", "POST"])
 def myprofile(username):
     # session user' username form database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("myprofile.html", username=username)
 
+    if session["user"]:
+        return render_template("myprofile.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+# LOG OUT PAGE
+@app.route("/logout")
+def logout():
+    # delete user from session cookie.
+    flash("You are now logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
