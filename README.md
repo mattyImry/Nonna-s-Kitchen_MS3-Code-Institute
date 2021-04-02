@@ -7,9 +7,15 @@ The deployed application can be accessed here "ADD LINK"
 ### **_Strategy / Site Owner story_**
 
 I have design this website to allow the User to create and save recipes. The main Users will be people that love cooking and like to try new recipes. The Users can come to the website anytime to view the recipes written by themselves or by other users. Without registering the casual User can only view other Users' recipes. If the User decides to register will be able to create, store, modify and delete his own recipes, basically creating his own recipe book. There will be also an Admin functionality only for maintenance purposes. I have also created this website so as the Developer I can collect other's Users recipes and try them myself. The main type of recipes created by the Developer will be Italian but any other type of cusine is welcome.  
-The data is stored by using [MongoDB](https://www.mongodb.com/). I have created two collections. The first one is for the recipes. This collection holds all the informations needed to prepare the recipes. Click [here](ADDLINK) to view a screenshot of the recipes collection.  
-The second collection is for the Users information. This collection will hold the username of the User and a password. Click [here](ADDLINK) to view a screenshot of the user collection.  
-Due to the possibility on the website to register and being able to store information security features are implemented. By using [Flask](https://flask.palletsprojects.com/en/1.1.x/) I will implement Password Hashing. Password hashing algorithm is supplied by Flask and the function is to mask the password inserted by the user during registration, so that can be stored safely in a database. Defensive programming will be also used during the production process.
+
+#### **_Data schema_**
+The data is stored by using [MongoDB](https://www.mongodb.com/). The documents stored in collections in MongoDB are more flexible than SQL databases. Documents can be modified also during the development. I have created two collections. The first one is collection "recipes". This collection holds all the informations needed to prepare the recipes. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database-recipes.jpg) to view a screenshot of the recipes collection.  
+The second one is collection "Users". This collection will hold the username of the User and a password. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database-users.jpg) to view a screenshot of the users collection.  
+The connection between the two collections is achived by the `key` "author" in the recipes collection which is the dame as the `key` "username" in the users. This key will guarantee that every recipe created will be only connected to the user that created it.
+
+#### **_Security_**
+Due to the possibility on the website to register and being able to store information security features are implemented. By using [Flask](https://flask.palletsprojects.com/en/1.1.x/)  I will implement Password Hashing and salting with the use of Flask dependence called Werkzeug. Password hashing algorithm is supplied by Werkzeug  and the function is to mask the password inserted by the user during registration, so that can be stored safely in a database. Defensive programing will also be used during the production process.
+To protect password and sensible information for MongoDB and Flask a file called env.py has been created. 
 
 
 ### **_Scope_**
@@ -54,7 +60,14 @@ Features that I want to implement are:
 
 ### **_Surface_**
 
-The website uses [Materialize](https://materializecss.com/) as a framework. I have decided to use because of the classic design that many users today are expecting from any website. 
+The website uses [Materialize](https://materializecss.com/) as a framework. I have decided to use it because of the classic design that many users today are expecting from any website. 
 The pages will looks like they are compose by cards. 
-The color scheme is very minimal with this 2 color used:  
-* #795548 
+The color scheme is very minimal with these colors used:  
+* #3e2723 is used for title's text.
+* #a1887f is used for the navbar anf footer.
+* text shadow is also used for the navbar elements
+* #448aff is used for fotter iconds and icons inside the inputs field for the forms.
+
+The fonts choosen are from [Google Fonts](https://fonts.google.com/).
+Font "Princess Sofia" has been used for main titles and logo.
+Font "Raleway" has been used for text in paragraphs, messages and smaller titles.
