@@ -2,19 +2,8 @@
 {% block content %}
 
     
-    {% for recipe in recipes %}
-        <!--{{ recipe.type }}<br>
-        {{ recipe.recipe_name }}<br>
-        {{ recipe.difficulty }}<br>
-        {{ recipe.prep_time }}<br>
-        {{ recipe.cook_time }}<br>
-        {{ recipe.serving }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.preparation }}<br>
-        {{ recipe.is_vegetarian }}<br>
-        <img class="" alt="{{recipe.recipe_name}} image" src="{{ recipe.image }}">
-        {{ recipe.author }}<br>
-        {{ recipe.image }}<br>-->
+    
+        
     
 
     <h1 class="center-align title-register brown-text darken-4 title">Welcome to Nonna's Kitchen</h1>
@@ -22,59 +11,28 @@
     <div class="container container">
         
         <div class="row ">
+            {% for recipe in recipes %}
             <div class="col s6 ">
                 <div class="card">
                     <div class="card-image">
                         <img src="{{ recipe.image }}" alt="{{recipe.recipe_name}}">
                         
                     </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                    <div class="card-content center-align">
+                        <div><h5 class="brown-text darken-4 center-align">{{recipe.recipe_name}}</h5></div>
+                        <div><i class="fas fa-users"></i> {{ recipe.serving }}</div>
+                        <div><i class="far fa-hourglass"></i> Prep: {{ recipe.prep_time }}</div>
+                        <div><i class="fas fa-hourglass"></i> Cook: {{ recipe.cook_time }}</div>
+                        <div><i class="fas fa-exclamation"></i> Difficulty: {{ recipe.difficulty }}</div>
+                        <div><i class="fas fa-leaf"></i> Vegetarian: {{ recipe.is_vegetarian }}</div>
                     </div>
                 </div>
             </div>
-            <div class="col s6 ">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="row">
-            <div class="col s6 ">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s6 ">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/sample-1.jpg">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
-    {% endfor %}
+    
 {% endblock %}
 
 

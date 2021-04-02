@@ -97,13 +97,13 @@ def myprofile(username):
     return redirect(url_for("login"))
 
 
-# LOG OUT PAGE
+# LOG OUT LINK WILL REDIRECT THE USER TO HOME PAGE WITH MESSAGE
 @app.route("/logout")
 def logout():
     # delete user from session cookie.
     flash("You are now logged out")
     session.pop("user")
-    return redirect(url_for("login"))
+    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":

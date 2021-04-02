@@ -63,7 +63,7 @@ Features that I want to implement are:
 The website uses [Materialize](https://materializecss.com/) as a framework. I have decided to use it because of the classic design that many users today are expecting from any website. 
 The pages will looks like they are compose by cards. 
 The color scheme is very minimal with these colors used:  
-* #3e2723 is used for title's text.
+* #3e2723 is used for title's text and borders for buttons and card .
 * #a1887f is used for the navbar anf footer.
 * text shadow is also used for the navbar elements
 * #448aff is used for fotter iconds and icons inside the inputs field for the forms.
@@ -71,3 +71,10 @@ The color scheme is very minimal with these colors used:
 The fonts choosen are from [Google Fonts](https://fonts.google.com/).
 Font "Princess Sofia" has been used for main titles and logo.
 Font "Raleway" has been used for text in paragraphs, messages and smaller titles.
+
+
+## **_User Story_**
+
+## **_Wireframes_**
+
+During the planning stage I have created a log out page as seen in the Wireframes. After consulting with my mentor I was advise that it was a better user experience if the User logs out to be redirected to the main page as a users logged out. This is because if the user logs out has probably completed whats intended and can leave the website. If the user logged out by mistake the log in link is present in the navbar. I agree with the point made and I have modified the Wireframes.
