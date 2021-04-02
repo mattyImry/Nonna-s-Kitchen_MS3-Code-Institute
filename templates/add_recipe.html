@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align title-pages brown-text darken-4">Add Recipe</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input  id="first_name" type="text" class="validate">
+                    <label for="first_name">Recipe name</label>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="input-field col s4">
+                    <select multiple>
+                        <option value="" disabled selected>Course type</option>
+                        <option value="1">First Dish</option>
+                        <option value="2">Main Course</option>
+                        <option value="2">Dessert</option>
+                    </select>
+                </div>
+                <div class="input-field col s4">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name"> Preparation Time</label>
+                </div>
+                <div class="input-field col s4">
+                    <select multiple>
+                        <option value="" disabled selected>Difficulty</option>
+                        <option value="1">Easy</option>
+                        <option value="2">Medium</option>
+                        <option value="2">Hard</option>
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="input-field col s4">
+                  
+                    <select multiple>
+                        <option value="" disabled selected>Vegetarian</option>
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                        
+                    </select>
+                </div>
+                <div class="input-field col s4">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name"> Cooking time</label>
+                </div>
+                <div class="input-field col s4">
+                    <select multiple>
+                        <option value="" disabled selected>Serving</option>
+                        <option value="1">2 People</option>
+                        <option value="2">4 People</option>
+                        <option value="3">6 People</option>
+                        <option value="4">8 People</option>
+                    </select>   
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Instructions</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Insert picture's URL</label>
+                </div>
+            </div>
+        </form>
+    </div>
+        
+{% endblock %}

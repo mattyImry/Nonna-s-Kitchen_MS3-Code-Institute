@@ -63,10 +63,11 @@ Features that I want to implement are:
 The website uses [Materialize](https://materializecss.com/) as a framework. I have decided to use it because of the classic design that many users today are expecting from any website. 
 The pages will looks like they are compose by cards. 
 The color scheme is very minimal with these colors used:  
-* #3e2723 is used for title's text and borders for buttons and card .
+* #3e2723 is used for title's texts and borders for buttons and cards.
+* #d7ccc8 is used for texts
 * #a1887f is used for the navbar anf footer.
 * text shadow is also used for the navbar elements
-* #448aff is used for fotter iconds and icons inside the inputs field for the forms.
+* #448aff is used for footer icons and icons.
 
 The fonts choosen are from [Google Fonts](https://fonts.google.com/).
 Font "Princess Sofia" has been used for main titles and logo.

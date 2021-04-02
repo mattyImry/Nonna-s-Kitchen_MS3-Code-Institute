@@ -49,7 +49,14 @@ body::after {
 
 /*INDEX.HTML PAGE*/
 
+ .card .card-content {
+    padding-top: 10px;
+ }
 
+ .title-pages {
+    font-weight: 600;
+    margin-top: 35px;
+}
 
 /*REGISTER.HTML PAGE*/
 
@@ -57,10 +64,6 @@ body::after {
     color: #448aff;
 }
 
-.title-register {
-    font-weight: 600;
-    margin-top: 35px;
-}
 
 .btn-register {
     border-radius: 20px;
