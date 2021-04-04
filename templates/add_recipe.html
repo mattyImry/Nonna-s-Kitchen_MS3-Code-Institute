@@ -4,7 +4,7 @@
     <h3 class="center-align title-pages brown-text darken-4">Add Recipe</h3>
 
     <section class="row card-add-recipe card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <div class="row">
                 <div class="input-field col s12">
                     <input  id="recipe_name" name="recipe_name" type="text" 
@@ -15,10 +15,10 @@
             <div class="row ">
                 <div class="input-field col s4">
                     <select id="type" name="type" multiple class="validate" required>
-                        <option value="" disabled selected>Course</option>
-                        <option value="1">First Dish</option>
-                        <option value="2">Main Course</option>
-                        <option value="2">Dessert</option>
+                        <option value="" disabled>Course</option>
+                        <option>First Dish</option>
+                        <option>Main Course</option>
+                        <option>Dessert</option>
                     </select>
                 </div>
                 <div class="input-field col s4">
@@ -27,10 +27,10 @@
                 </div>
                 <div class="input-field col s4">
                     <select id="difficulty" name="difficulty" multiple class="validate" required>
-                        <option value="" disabled selected>Difficulty</option>
-                        <option value="1">Easy</option>
-                        <option value="2">Medium</option>
-                        <option value="2">Hard</option>
+                        <option value="" disabled >Difficulty</option>
+                        <option>Easy</option>
+                        <option>Medium</option>
+                        <option>Hard</option>
                         
                     </select>
                 </div>
@@ -39,9 +39,9 @@
                 <div class="input-field col s4">
                   
                     <select id="is_vegetarian" name="is_vegetarian" multiple class="validate" required>
-                        <option value="" disabled selected>Vegetarian</option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
+                        <option value="" disabled>Vegetarian</option>
+                        <option>Yes</option>
+                        <option>No</option>
                         
                     </select>
                 </div>
@@ -51,25 +51,23 @@
                 </div>
                 <div class="input-field col s4">
                     <select id="serving" name="serving" multiple class="validate" required>
-                        <option value="" disabled selected>Serving</option>
-                        <option value="1">2 People</option>
-                        <option value="2">4 People</option>
-                        <option value="3">6 People</option>
-                        <option value="4">8 People</option>
+                        <option value="" disabled >Serving</option>
+                        <option>2 People</option>
+                        <option>4 People</option>
+                        <option>6 People</option>
+                        <option>8 People</option>
                     </select>       
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate"
-                        minlength="5" maxlength="500" required></textarea>
+                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required></textarea>
                     <label for="ingredients">Ingredients</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="preparation" name="preparation" class="materialize-textarea validate"
-                        minlength="5" maxlength="500" required></textarea>
+                    <textarea id="preparation" name="preparation" class="materialize-textarea validate" required></textarea>
                     <label for="preparation">Preparation</label>
                 </div>
             </div>
@@ -80,6 +78,11 @@
                     <label for="image">Please Insert picture's URL</label>
                     <p><small>Please only supply URL ending with .jpg, .jpeg, or .png</small></p>
                 </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="col s12 btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
+                    Add Recipe <i class="fas fa-plus-square"></i>
+                </button>
             </div>
         </form>
     </section>
