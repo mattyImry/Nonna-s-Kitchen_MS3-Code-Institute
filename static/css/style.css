@@ -88,5 +88,10 @@ body::after {
 }
 
 
-/*MEDIA QUERY*/
+/*ADD-RECIPE.HTML PAGE*/
 
+.card-add-recipe {
+    border: 3px solid ;
+    border-radius: 20px;
+    color: #795548
+}
