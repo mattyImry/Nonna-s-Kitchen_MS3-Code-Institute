@@ -97,7 +97,7 @@ def myprofile(username):
     return redirect(url_for("login"))
 
 
-# LOG OUT LINK WILL REDIRECT THE USER TO HOME PAGE WITH MESSAGE
+# LOG OUT LINK WILL REDIRECT THE USER TO HOME PAGE
 @app.route("/logout")
 def logout():
     # delete user from session cookie.
@@ -131,6 +131,23 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    if request.method == "POST":
+        submit = {
+            "type": request.form.get("type"),
+            "recipe_name": request.form.get("recipe_name"),
+            "difficulty": request.form.get("difficulty"),
+            "prep_time": request.form.get("prep_time"),
+            "cook_time": request.form.get("cook_time"),
+            "serving": request.form.get("serving"),
+            "ingredients": request.form.get("ingredients"),
+            "preparation": request.form.get("preparation"),
+            "is_vegetarian": request.form.get("is_vegetarian"),
+            "author": session["user"],
+            "image": request.form.get("image")
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        flash("Recipe Succesfully Updated!")
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
 
