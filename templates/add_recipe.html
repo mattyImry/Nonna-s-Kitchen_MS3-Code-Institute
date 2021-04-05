@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align title-pages brown-text darken-4">Add Recipe</h3>
+    <h3 class="center-align title-add_recipe brown-text darken-4">Add Recipe</h3>
 
+    <!--ADD RECIPE SECTION--> 
     <section class="row card-add-recipe card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <div class="row">
@@ -13,6 +14,8 @@
                 </div>
             </div>
             <div class="row ">
+
+                <!--ADD TYPE OF MEAL--> 
                 <div class="input-field col s4">
                     <select id="type" name="type" multiple class="validate" required>
                         <option value="" disabled>Course</option>
@@ -21,34 +24,41 @@
                         <option>Dessert</option>
                     </select>
                 </div>
+
+                <!--ADD PREPARATION TIME--> 
                 <div class="input-field col s4">
                     <input id="prep_time" name="prep_time"  type="text" class="validate" required>
                     <label for="prep_time">Prep Time</label>
                 </div>
+
+                <!--ADD DIFFICULTY -->
                 <div class="input-field col s4">
                     <select id="difficulty" name="difficulty" multiple class="validate" required>
                         <option value="" disabled >Difficulty</option>
                         <option>Easy</option>
                         <option>Medium</option>
-                        <option>Hard</option>
-                        
+                        <option>Hard</option>   
                     </select>
                 </div>
             </div>
             <div class="row ">
+
+                <!--ADD VEGETERIAN VALUE--> 
                 <div class="input-field col s4">
-                  
                     <select id="is_vegetarian" name="is_vegetarian" multiple class="validate" required>
                         <option value="" disabled>Vegetarian</option>
                         <option>Yes</option>
-                        <option>No</option>
-                        
+                        <option>No</option>    
                     </select>
                 </div>
+
+                <!--ADD COOKING TIME-->
                 <div class="input-field col s4">
                     <input id="cook_time" name="cook_time" type="text" class="validate" required>
                     <label for="cook_time">Cooking time</label>
                 </div>
+
+                <!--ADD SERVING-->
                 <div class="input-field col s4">
                     <select id="serving" name="serving" multiple class="validate" required>
                         <option value="" disabled >Serving</option>
@@ -59,18 +69,24 @@
                     </select>       
                 </div>
             </div>
+
+            <!--ADD INGREDIENTS-->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required></textarea>
                     <label for="ingredients">Ingredients</label>
                 </div>
             </div>
+
+            <!--ADD PREPARATION STEPS-->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="preparation" name="preparation" class="materialize-textarea validate" required></textarea>
                     <label for="preparation">Preparation</label>
                 </div>
             </div>
+
+            <!--ADD IMAGE-->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="image" name="image" class="materialize-textarea validate"
@@ -79,10 +95,14 @@
                     <p><small>Please only supply URL ending with .jpg, .jpeg, or .png</small></p>
                 </div>
             </div>
+
+            <!--SUBMIT NEW CREATED RECIPE-->
             <div class="row">
-                <button type="submit" class="col s12 btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
-                    Add Recipe <i class="fas fa-plus-square"></i>
-                </button>
+                <div class="col s12 center-align">
+                    <button type="submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit ">
+                        Add Recipe <i class="fas fa-plus-square"></i>
+                    </button>
+                </div>
             </div>
         </form>
     </section>

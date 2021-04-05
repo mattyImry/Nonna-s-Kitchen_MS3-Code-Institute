@@ -93,5 +93,21 @@ body::after {
 .card-add-recipe {
     border: 3px solid ;
     border-radius: 20px;
-    color: #795548
+    color: #795548;
+    margin-bottom: 45px;
+}
+
+#btn-add {
+    width: 30%;
+}
+
+.title-add_recipe {
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.input-field>label,
+.select-wrapper input.select-dropdown {
+    color: #795548;
 }
