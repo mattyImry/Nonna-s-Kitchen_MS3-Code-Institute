@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input value="{{ recipe.recipe_name }}" id="recipe_name" name="recipe_name" type="text" 
-                        minlength="5" maxlength="40" class="validate" required>
+                        minlength="5" maxlength="40" class="validate brown-text darken-4 " required>
                     <label for="recipe_name">Recipe name</label>
                 </div>
             </div>
@@ -71,7 +71,7 @@
             <div class="row ">
                 <!--EDIT DIFFICULTY -->
                 <div class="input-field col s6">
-                    <select id="difficulty" name="difficulty" class="validate" required>
+                    <select id="difficulty" name="difficulty" class="validate " required>
                         <option value="{{ recipe.difficulty }}" disabled selected>Difficulty</option>
                         {% if recipe.difficulty == "Easy" %}
                             <option value="{{ recipe.difficulty }}" selected>{{ recipe.difficulty }}</option>
@@ -109,14 +109,14 @@
             <div class="row">
                 
                 <!--EDIT COOKING TIME-->
-                <div class="input-field col s6">
-                    <input value="{{ recipe.cook_time }}" id="cook_time" name="cook_time" type="text" class="validate" required>
+                <div class="input-field col s6 ">
+                    <input value="{{ recipe.cook_time }}" id="cook_time" name="cook_time" type="text" class="validate brown-text" required>
                     <label for="cook_time">Cooking time</label>
                 </div>
 
                 <!--EDIT PREPARATION TIME--> 
                 <div class="input-field col s6">
-                    <input value="{{ recipe.prep_time }}" id="prep_time" name="prep_time"  type="text" class="validate" required>
+                    <input value="{{ recipe.prep_time }}" id="prep_time" name="prep_time"  type="text" class="validate brown-text" required>
                     <label for="prep_time">Preparation Time</label>
                 </div>   
             </div>
@@ -124,7 +124,7 @@
             <!--EDIT INGREDIENTS-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate" required>
+                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate brown-text" required>
                     {{- recipe.ingredients -}} 
                     </textarea>
                     <label for="ingredients">Ingredients</label>
@@ -134,7 +134,7 @@
             <!--EDIT PREPARATION STEPS-->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="preparation" name="preparation" class="materialize-textarea validate" required>
+                    <textarea id="preparation" name="preparation" class="materialize-textarea validate brown-text" required>
                     {{- recipe.preparation -}}
                     </textarea>
                     <label for="preparation">Preparation</label>
@@ -143,8 +143,8 @@
 
             <!--EDIT IMAGE-->
             <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="image" name="image" class="materialize-textarea validate"
+                <div class="input-field col s12 ">
+                    <textarea id="image" name="image" class="materialize-textarea validate brown-text"
                         minlength="5" maxlength="300" required>{{- recipe.image -}}</textarea>
                     <label for="image">Please Insert picture's URL</label>
                     <p><small>Please only supply URL ending with .jpg, .jpeg, or .png</small></p>

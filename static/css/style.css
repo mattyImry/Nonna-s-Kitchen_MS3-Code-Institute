@@ -4,6 +4,7 @@ body {
     font-family: 'Raleway', sans-serif;
     min-height: 100vh;
     position: relative;
+    color: #795548;
 }
 
 body::after {
@@ -64,7 +65,6 @@ body::after {
     color: #448aff;
 }
 
-
 .btn-submit {
     border-radius: 20px;
     border: 3px solid;
@@ -88,7 +88,7 @@ body::after {
 }
 
 
-/*ADD-RECIPE.HTML PAGE*/
+/*ADD_RECIPE.HTML PAGE*/
 
 .card-add-recipe {
     border: 3px solid ;
@@ -111,3 +111,9 @@ body::after {
 .select-wrapper input.select-dropdown {
     color: #795548;
 }
+
+/*EDIT_RECIPE.HTML
+
+.textarea.materialize-textarea {
+    color: #795548;
+}*/

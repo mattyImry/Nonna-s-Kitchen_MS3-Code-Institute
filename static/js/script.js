@@ -4,8 +4,10 @@ $(document).ready(function(){
     $(".sidenav").sidenav({edge: "right"});
     $('select').formSelect();
 
-    /* ADD CURRENT YEAR TO FOOTER CODE */
+    /* MODAL FUNCTION FOR DELETE CONFIRMATION*/
+    $('.modal').modal();
 
+    /* ADD CURRENT YEAR TO FOOTER CODE */
     $(".year").text((new Date).getFullYear());
 
     /* MATERIALIZE VALIDATION CODE TO ACTIVATE VALIDATION ON DROP DOWN MENU. 
