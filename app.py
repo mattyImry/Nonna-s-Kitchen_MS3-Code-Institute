@@ -84,7 +84,7 @@ def login():
     return render_template("login.html")
 
 
-# PROFILE'USER PAGE
+# PROFILE'S USER PAGE
 @app.route("/myprofile/<username>", methods=["GET", "POST"])
 def myprofile(username):
     # session user' username form database
@@ -104,15 +104,29 @@ def myprofile(username):
     return redirect(url_for("login"))
 
 
+# DELETE PROFILE'S USER AND USER'S RECIPES
+@app.route("/delete_user/<username>")
+def delete_user(username):
+    mongo.db.users.remove({"username": username})
+    mongo.db.recipes.remove({"author": username})
+    flash("Profile removed succesfully")
+
+    # delete user from session cookie.
+    session.pop("user")
+    return redirect(url_for("index"))
+    
+
 # LOG OUT LINK WILL REDIRECT THE USER TO HOME PAGE
 @app.route("/logout")
 def logout():
-    # delete user from session cookie.
     flash("You are now logged out")
+
+    # delete user from session cookie.
     session.pop("user")
     return redirect(url_for("index"))
 
 
+# ADD RECIPE TO DATABASE
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -136,6 +150,7 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
+# UPDATE RECIPE TO DATABASE
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -159,11 +174,30 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe)
 
 
+# DELETE RECIPE FROM DATABASE
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe deleted succesfully!")
     return redirect(url_for("index"))
+
+
+# SINGLE RECIPE SHOWN WHEN CLICKING THE RECIPE CARD FROM INDEX PAGE
+
+    """
+    CODE TAKEN FROM
+    https://github.com/Sean-Mc-Mahon/McTasticRecipes
+
+    """
+@app.route("/single_recipe/<recipe_id>")
+def single_recipe(recipe_id):
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    username = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})["author"]
+    return render_template("single_recipe.html",
+        recipe=recipe,
+        username=username)
 
 
 if __name__ == "__main__":
