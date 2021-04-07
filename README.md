@@ -79,3 +79,8 @@ Font "Raleway" has been used for text in paragraphs, messages and smaller titles
 ## **_Wireframes_**
 
 During the planning stage I have created a log out page as seen in the Wireframes. After consulting with my mentor I was advise that it was a better user experience if the User logs out to be redirected to the main page as a users logged out. This is because if the user logs out has probably completed whats intended and can leave the website. If the user logged out by mistake the log in link is present in the navbar. I agree with the point made and I have modified the Wireframes.
+
+
+## **_Bugs_**
+
+* When adding the modal from Materialize I had a problem when deleting the recipe. The recipe deleted wasn't the one intended. I then discover that the modal needs a unique ID. By applying the `recipe._Id` to the id required by the modal, the recipe that gets deleted is now the correct one.

@@ -91,8 +91,15 @@ def myprofile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    # display user and number of recipes for the current user
+    recipes = mongo.db.recipes.find()
+    user_number_of_recipes = mongo.db.recipes.count({"author": username})
+
     if session["user"]:
-        return render_template("myprofile.html", username=username)
+        return render_template(
+            "myprofile.html", username=username,
+            user_number_of_recipes=user_number_of_recipes,
+            recipes=recipes)
 
     return redirect(url_for("login"))
 
