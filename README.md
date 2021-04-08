@@ -78,7 +78,8 @@ Font "Raleway" has been used for text in paragraphs, messages and smaller titles
 
 ## **_Wireframes_**
 
-During the planning stage I have created a log out page as seen in the Wireframes. After consulting with my mentor I was advise that it was a better user experience if the User logs out to be redirected to the main page as a users logged out. This is because if the user logs out has probably completed whats intended and can leave the website. If the user logged out by mistake the log in link is present in the navbar. I agree with the point made and I have modified the Wireframes.
+During the planning stage I have created a log out page as seen in the Wireframes. After consulting with my mentor I was advise that it was a better user experience if the User logs out to be redirected to the main page as a users logged out. This is because if the user logs out has probably completed whats intended and can leave the website. If the user logged out by mistake the log in link is present in the navbar. I agree with the point made and I have modified the Wireframes.  
+The wireframe for the  single page is not the same as the finished page because during the development of the page I prefered to have a bigger picture of the recipe instead of a small one with the writings floating on the right.
 
 
 ## **_Bugs_**
