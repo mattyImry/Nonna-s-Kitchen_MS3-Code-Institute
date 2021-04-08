@@ -1,171 +1,71 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align title-add_recipe brown-text darken-4">{{ recipe.recipe_name }}</h3>
 
-    <!--EDIT RECIPE SECTION--> 
-    <section class="row card-add-recipe card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input value="{{ recipe.recipe_name }}" id="recipe_name" name="recipe_name" type="text" 
-                        minlength="5" maxlength="40" class="validate brown-text darken-4 " required>
-                    <label for="recipe_name">Recipe name</label>
-                </div>
+    
+    <div class="container">
+        <div class="row center-align ">
+            <div class=" input-field col s12 search-single">
+                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                <label for="first_name" class="center-align">Search</label>
             </div>
-            <div class="row ">
-
-                <!--EDIT TYPE OF MEAL--> 
-                <div class="input-field col s6">
-                    <select id="type" name="type" class="validate" required>
-
-                        <option value="" disabled>Course</option>
-                        {% if recipe.type == "First Dish" %}
-                            <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option>
-                            <option value="Main Course">Main Course</option>
-                            <option value="Dessert">Dessert</option>
-                        {% elif recipe.type == "Main Course" %}
-                            <option value="First Dish">First Dish</option>
-                            <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option> 
-                            <option value="Dessert">Dessert</option>
-                        {% else %}
-                            <option value="First Dish">First Dish</option>
-                            <option value="Main Course">Main Course</option> 
-                            <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option>
-                        {% endif %}
-                    </select>
-                    <label for="type">Course</label>
-                </div>
-
-                <!--EDIT SERVING-->
-                <div class="input-field col s6">
-                    <select id="serving" name="serving" class="validate" required>
-                        <option value="" disabled >Serving</option>
-                        {% if recipe.serving == "2 People" %}
-                            <option value="{{ recipe.serving }}" selected>{{ recipe.serving }}</option>
-                            <option value="4 People">4 People</option>
-                            <option value="6 People">6 People</option>
-                            <option value="8 People">8 People</option>
-                        {% elif recipe.serving == "4 People" %} 
-                            <option value="2 People">2 People</option>
-                            <option value="{{ recipe.serving }}" selected>{{ recipe.serving }}</option>
-                            <option value="6 Peopl">6 People</option>
-                            <option value="8 Peopl">8 People</option>
-                        {% elif recipe.serving == "6 People" %}
-                            <option value="2 People">2 People</option>
-                            <option value="4 People">4 People</option>
-                            <option value="{{ recipe.serving }}" selected>{{ recipe.serving }}</option>
-                            <option value="">8 People</option>
-                        {% else %}
-                            <option value="2 People">2 People</option>
-                            <option value="4 People">4 People</option>
-                            <option value="6 People">6 People</option>
-                            <option value="{{ recipe.serving }}" selected>8 People</option>
-                        {% endif %}
-                    </select>    
-                    <label for="serving">Serving</label>   
-                </div>
-
-                
-            </div>
-            <div class="row ">
-                <!--EDIT DIFFICULTY -->
-                <div class="input-field col s6">
-                    <select id="difficulty" name="difficulty" class="validate " required>
-                        <option value="{{ recipe.difficulty }}" disabled selected>Difficulty</option>
-                        {% if recipe.difficulty == "Easy" %}
-                            <option value="{{ recipe.difficulty }}" selected>{{ recipe.difficulty }}</option>
-                            <option value="Medium" >Medium</option>
-                            <option value="Hard">Hard</option>
-                        {% elif recipe.difficulty == "Medium" %}
-                            <option value="Easy">Easy</option>
-                            <option value="{{ recipe.difficulty }}" selected>{{ recipe.difficulty }}</option>
-                            <option value="Hard">Hard</option>
-                        {% else %}
-                            <option value="Easy">Easy</option>
-                            <option value="Medium">Medium</option>
-                            <option value="{{ recipe.difficulty }}" selected>{{ recipe.difficulty }}</option>  
-                        {% endif %}          
-                    </select>
-                    <label for="difficulty">Difficulty</label>
-                </div>
-
-                <!--EDIT VEGETERIAN VALUE--> 
-                <div class="input-field col s6">
-                    <select id="is_vegetarian" name="is_vegetarian" class="validate" required>
-                        <option value="{{ recipe.is_vegetarian }}" disabled>Vegetarian</option>
-                        {% if recipe.is_vegetarian == "Yes"%}
-                            <option value="{{ recipe.is_vegetarian }}" selected>{{ recipe.is_vegetarian }}</option>
-                            <option value="No">No</option>
-                        {% else %}
-                            <option value="Yes">Yes</option>
-                            <option value="{{ recipe.is_vegetarian }}" selected>{{ recipe.is_vegetarian }}</option>
-                        {% endif %}    
-                    </select>
-                    <label for="is_vegetarian">Vegetarian</label> 
-                </div>
-            </div>
-
-            <div class="row">
-                
-                <!--EDIT COOKING TIME-->
-                <div class="input-field col s6 ">
-                    <input value="{{ recipe.cook_time }}" id="cook_time" name="cook_time" type="text" class="validate brown-text" required>
-                    <label for="cook_time">Cooking time</label>
-                </div>
-
-                <!--EDIT PREPARATION TIME--> 
-                <div class="input-field col s6">
-                    <input value="{{ recipe.prep_time }}" id="prep_time" name="prep_time"  type="text" class="validate brown-text" required>
-                    <label for="prep_time">Preparation Time</label>
-                </div>   
-            </div>
-
-            <!--EDIT INGREDIENTS-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate brown-text" required>
-                    {{- recipe.ingredients -}} 
-                    </textarea>
-                    <label for="ingredients">Ingredients</label>
-                </div>
-            </div>
-
-            <!--EDIT PREPARATION STEPS-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="preparation" name="preparation" class="materialize-textarea validate brown-text" required>
-                    {{- recipe.preparation -}}
-                    </textarea>
-                    <label for="preparation">Preparation</label>
-                </div>
-            </div>
-
-            <!--EDIT IMAGE-->
-            <div class="row">
-                <div class="input-field col s12 ">
-                    <textarea id="image" name="image" class="materialize-textarea validate brown-text"
-                        minlength="5" maxlength="300" required>{{- recipe.image -}}</textarea>
-                    <label for="image">Please Insert picture's URL</label>
-                    <p><small>Please only supply URL ending with .jpg, .jpeg, or .png</small></p>
-                </div>
-            </div>
-
-            <!--SUBMIT EDITED RECIPE-->
-            <div class="row center-align">
-                <div class="col s12 center-align">
-
-                    <!--EDIT BUTTON-->
-                    <button type="submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit ">
-                        Edit Recipe <i class="fas fa-edit"></i>
-                    </button>
-
-                    <!--CANCEL BUTTON-->
-                    <a href="{{ url_for('index') }}" class="btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
-                        Cancel <i class="fas fa-window-close"></i></a>  
-                </div>
-            </div>
-        </form>
-    </section>
+        </div>
         
+        <section class="row card-add-recipe card-panel grey lighten-5">
+            
+            <div class="row">
+                <h3 class="center-align title-add_recipe brown-text darken-4">{{ recipe.recipe_name }}</h3>
+                <div class="col s12">
+                    <img src="{{ recipe.image }}" alt="{{recipe.recipe_name}}" class="image-recipe">
+                </div>
+            </div>
+            <div class="row">       
+                    <div class="brown-text lighten-4 desc col s6 center-align">
+                        <i class="fas fa-tag fa-2x icon"></i> Course type: {{ recipe.type }}</div>
+                    <div class="brown-text lighten-4 desc col s6 center-align">
+                        <i class="fas fa-users fa-2x icon"></i> Serving: {{ recipe.serving }}</div>
+                    <div class="brown-text lighten-4 desc col s6 center-align">
+                        <i class="fas fa-utensils fa-2x icon"></i> Preparation Time: {{ recipe.prep_time }}</div>
+                    <div class="brown-text lighten-4 desc col s6 center-align">
+                        <i class="fas fa-hourglass fa-2x icon"></i> Cooking Time: {{ recipe.cook_time }}</div>
+                    <div class="brown-text lighten-4 desc col s6 center-align">
+                        <i class="fas fa-exclamation fa-2x icon"></i> Difficulty: {{ recipe.difficulty }}</div>
+                    <div class="brown-text lighten-4 desc col s6 center-align">
+                        <i class="fas fa-leaf fa-2x icon"></i> Vegetarian: {{ recipe.is_vegetarian }}</div>             
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col s12 m7 center-align">
+                    <h4 class="center-align title-add_recipe brown-text darken-4">Preparation</h4>
+                    {{- recipe.preparation -}}
+                </div>
+                
+                <div class="col s12 m5 center-align">
+                    <div class="divider divider-2"></div>
+                    <h4 class="center-align title-add_recipe brown-text darken-4">ingredients</h4>
+                    {{- recipe.ingredients -}} 
+                </div>
+            </div>
+            
+            <!--IF CURRENT USER LOG IN SHOWING BUTTON TO EDIT RECIPE-->
+            {% if session.user|lower == recipe.author|lower %}
+                <div class="row">
+                    <div class="col s6 center-align">
+
+                        <!--EDIT BUTTON-->
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                            class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light"> Edit <i class="fas fa-edit"></i></a>
+                    </div>
+                    <div class="col s6 center-align">
+
+                        <!--CANCEL BUTTON-->
+                        <a href="{{ url_for('index') }}" class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light modal-trigger">
+                            Cancel <i class="fas fa-window-close"></i></a>
+                    </div>
+                </div>   
+            {% endif %}
+            
+                <div class="brown-text lighten-4 center-align desc"> <i class="fas fa-user-check fa-2x icon"></i> Author: {{ recipe.author }}</div>
+        </section>   
+    </div>    
 {% endblock %}

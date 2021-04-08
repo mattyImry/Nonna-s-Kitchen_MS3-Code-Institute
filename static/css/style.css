@@ -19,13 +19,13 @@ body::after {
     
 }
 
-/*NAVBAR*/
+/* NAVBAR */
 
 .title {
     font-family: 'Princess Sofia', sans-serif;
 }
 
-/*FOOTER*/
+/* FOOTER */
 
 .copyright {
     margin-top: 5px;
@@ -48,7 +48,7 @@ body::after {
 }
 
 
-/*INDEX.HTML PAGE*/
+/* INDEX.HTML PAGE */
 
  .card .card-content {
     padding-top: 10px;
@@ -59,7 +59,7 @@ body::after {
     margin-top: 35px;
 }
 
-/*REGISTER.HTML PAGE*/
+/* REGISTER.HTML PAGE */
 
 .icon {
     color: #448aff;
@@ -81,14 +81,14 @@ body::after {
     margin-top: 50px;
 }
 
-/* FLASH MESSAGES*/
+/* FLASH MESSAGES */
 
 .flash-text{
     margin-top: 35px;
 }
 
 
-/*ADD_RECIPE.HTML PAGE*/
+/* ADD_RECIPE.HTML PAGE */
 
 .card-add-recipe {
     border: 3px solid ;
@@ -112,8 +112,35 @@ body::after {
     color: #795548;
 }
 
-/*EDIT_RECIPE.HTML
+/* MYPROFILE.HTML PAGE */
 
-.textarea.materialize-textarea {
-    color: #795548;
-}*/
+.btn-myprofile{
+    margin-bottom: 25px;
+}
+
+/* SINGLE_RECIPE.HTML PAGE*/
+
+.desc {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.image-recipe {
+    height: 100%;
+    width: 100%;
+}
+
+.search-single {
+    margin-top: 40px;
+}
+
+.divider {
+    height: 3px;
+    margin-top: 35px;
+}
+
+@media only screen and (min-width: 768px) {
+    .divider-2{
+        display: none;
+    }
+}
