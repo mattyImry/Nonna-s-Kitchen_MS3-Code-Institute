@@ -16,7 +16,6 @@ body::after {
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
     padding: 0 25px;
-    
 }
 
 /* NAVBAR */
@@ -47,7 +46,6 @@ body::after {
     height: 92px;
 }
 
-
 /* INDEX.HTML PAGE */
 
  .card .card-content {
@@ -57,6 +55,10 @@ body::after {
  .title-pages {
     font-weight: 600;
     margin-top: 35px;
+}
+
+.list-card {
+    padding-bottom: 5px;
 }
 
 /* REGISTER.HTML PAGE */
@@ -139,8 +141,17 @@ body::after {
     margin-top: 35px;
 }
 
-@media only screen and (min-width: 768px) {
-    .divider-2{
+.divider-3 {
+    margin-bottom: 20px;
+}
+
+.class-list {
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 600px) {
+    .divider-2 {
         display: none;
     }
 }
+

@@ -31,12 +31,18 @@
                         </div>
                         <div class="card-content center-align">
                             <div><h5 class="brown-text darken-4 center-align">{{recipe.recipe_name}}</h5></div>
-                            <div class="brown-text lighten-4" ><i class="fas fa-users icon"></i> {{ recipe.serving }}</div>
-                            <div class="brown-text lighten-4"><i class="fas fa-utensils icon"></i> Prep: {{ recipe.prep_time }}</div>
-                            <div class="brown-text lighten-4"><i class="fas fa-hourglass icon"></i> Cook: {{ recipe.cook_time }}</div>
-                            <div class="brown-text lighten-4"><i class="fas fa-exclamation icon"></i> Difficulty: {{ recipe.difficulty }}</div>
-                            <div class="brown-text lighten-4"> <i class="fas fa-leaf icon"></i> Vegetarian: {{ recipe.is_vegetarian }}</div>
-                            <div class="brown-text lighten-4"> <i class="fas fa-user-check icon"></i> Author: {{ recipe.author }}</div>
+                            <div class="brown-text lighten-4" ><i class="fas fa-users icon"></i> <span class="class-list">Serving:</span>
+                                {{ recipe.serving }}</div>
+                            <div class="brown-text lighten-4"><i class="fas fa-utensils icon"></i> <span class="class-list">Prep:</span>
+                                {{ recipe.prep_time }}</div>
+                            <div class="brown-text lighten-4"><i class="fas fa-hourglass icon"></i> <span class="class-list">Cook:</span>
+                                {{ recipe.cook_time }}</div>
+                            <div class="brown-text lighten-4"><i class="fas fa-exclamation icon"></i> <span class="class-list">Difficulty:</span>
+                                {{ recipe.difficulty }}</div>
+                            <div class="brown-text lighten-4"> <i class="fas fa-leaf icon"></i> <span class="class-list">Vegetarian:</span>
+                                {{ recipe.is_vegetarian }}</div>
+                            <div class="brown-text lighten-4"> <i class="fas fa-user-check icon"></i> <span class="class-list">Author:</span>
+                                {{ recipe.author }}</div>
                         </div>
                     
                     <!--MODAL FOR CONFIRMATION BEFORE DELETING RECIPE-->
