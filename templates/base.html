@@ -30,7 +30,7 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('myprofile', username=session['user']) }}">My Profile</a></li>
                         <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        <li><a href="#logout" class="modal-trigger">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>  
                         <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -46,14 +46,28 @@
             {% if session.user %}
                 <li><a href="{{ url_for('myprofile', username=session['user']) }}">My Profile</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                <li><a href="#logout" class="modal-trigger">Log Out</a></li>
+                
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>  
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
             <li><a href="#">Contact Us</a></li>
         </ul>
-    </header>
+
+        <!--MODAL FOR CONFIRMATION BEFORE LOGOUT-->
+        <div id="logout" class="modal">
+            <div class="modal-content center-align">
+                <h4>Confirm Log Out</h4>
+                <p>Are you sure you want to Log Out?</p>
+            </div>
+            <div class="modal-footer center-align">
+                <a href="{{ url_for('logout') }}"
+                    class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="{{ url_for('index') }}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            </div>
+        </div>
+        </header>
 
     <section>
         <!--FLASH MESSAGES-->

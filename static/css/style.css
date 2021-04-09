@@ -8,9 +8,9 @@ body {
 }
 
 body::after {
-  content: '';
-  display: block;
-  height: 92px;
+    content: '';
+    display: block;
+     height: 92px;
 }
 
 .text-shadow {
