@@ -114,18 +114,31 @@ The wireframe for the  single page is not the same as the finished page because 
 ### **_Existing Features_**
 
 * The navbar has a logo on the left hand corner and the "Home" link that when clicked will direct the User to the main page showing all recipe present in the website. The navbar will show different links depending if the user is logged in or not.  
-If the user is logged in the link available will be:
+If the user is logged in the links available will be:
 "Home", "My Profile", "Add Recipe", "Log Out", "Contact Us".  
 If the user is not logged in the links visible will be:
 "Home", "Log In", "Register", "Contact Us".
 On the mobile view the navbar will be showing the logo on the left hand side but the links will be hold in a burger menu rapresented by an arrow pointing down.
 
-* The footer will only hold the contatc page link via a letter icon and two icons redirect the Users to the developer LinkedIn acoount and GitHub account.
+* The website is visible in all screen sizes.
+* The footer will only hold the contact page link via a letter icon and two icons redirect the Users to the developer LinkedIn acoount and GitHub account.
+* The unregistered Users can register an account via the "Register" page.
+* The register User can log in via the log in link in the navbar.
+* The User can log out via the log out link in the navbar.
+* Any visitor to the website can contact the developer via the contact form in the "Contact us" page which uses [EailJS](https://www.emailjs.com/) .
+* Any visitor to the website can search recipes via the search functionality in the "Index" page.
+* The logged in User can add his own recipe via the "Add recipe" page. 
+* The logged in User will be able to edit and delete his own recipes from "My profile" page and "Index" page.
+* The logged in User will be able to edit and delete his own recipes from "Index" page only if lodded in.
+* The logged in User will be able to edit his own recipes when recipe view via "Single recipe" page.
+* The logged in User will be able to delete his own account from "My profile" page.
+* The logged in User will be able to search recipes via the search functionality in the "My profile" page.
+* All the information for the recipes and users will be stored by using [MongoDB](https://www.mongodb.com/). The informations will be retrieve and send with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/).
+* Pagination from [Flask](https://flask.palletsprojects.com/en/1.1.x/) is also implememted.
 
-* The user can add his own recipe via the " Add recipe " page. 
-* The User will be able to edit his 
 
 
+### **_Features to be implemented_**
 
 
 
