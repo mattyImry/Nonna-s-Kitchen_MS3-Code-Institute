@@ -1,8 +1,10 @@
 import os
+import math
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
+from flask_paginate import get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -23,8 +25,24 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    recipes = list(mongo.db.recipes.find())
-    return render_template("index.html", recipes=recipes)
+
+    # idea & code for pagination  taken from
+    # https://github.com/Sean-Mc-Mahon/McTasticRecipes
+    # pagination
+
+    recipes_per_page = 4
+    current_page = int(request.args.get('current_page', 1))
+    recipes = mongo.db.recipes.find().skip(
+        (current_page - 1)*recipes_per_page).sort(
+            '_id', pymongo.DESCENDING).skip(
+                (current_page - 1)*recipes_per_page).limit(recipes_per_page)
+    number_recipes = recipes.count()
+    pages = range(1, int(math.ceil(number_recipes / recipes_per_page)) + 1)
+
+    return render_template(
+        "index.html", recipes=recipes,
+        current_page=current_page, pages=pages,
+        recipes_per_page=recipes_per_page)
 
 
 # SEARCH FUNCTIONALITY
