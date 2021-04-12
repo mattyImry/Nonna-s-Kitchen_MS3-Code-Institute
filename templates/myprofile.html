@@ -48,6 +48,8 @@
                             <div class="col s12 btn-myprofile">
                                 <!--EDIT RECIPE-->
                                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light"> Edit <i class="fas fa-edit"></i></a>
+
+                                <!--DELETE RECIPE-->
                                 <a href="#{{ recipe._id }}" class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light modal-trigger"> Delete <i class="fas fa-window-close"></i></a>
 
                                 <!--MODAL FOR CONFIRMATION BEFORE DELETIGN-->

@@ -10,7 +10,7 @@ body {
 body::after {
     content: '';
     display: block;
-     height: 92px;
+    height: 92px;
 }
 
 .text-shadow {
@@ -22,6 +22,14 @@ body::after {
 
 .title {
     font-family: 'Princess Sofia', sans-serif;
+}
+
+.main-title {
+    font-family: 'Princess Sofia', sans-serif;
+    font-weight: 600;
+    margin-top: 65px;
+    margin-bottom: 0;
+
 }
 
 /* FOOTER */
@@ -87,6 +95,9 @@ body::after {
 
 .flash-text{
     margin-top: 35px;
+    border: 3px solid ;
+    border-radius: 20px;
+    color: #795548;
 }
 
 
