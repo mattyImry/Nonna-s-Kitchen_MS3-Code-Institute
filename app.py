@@ -74,11 +74,11 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 # if username and password match create session cookie
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome back {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                            "myprofile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome back {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                        "myprofile", username=session["user"]))
             else:
                 # password no matched
                 flash("Incorrect Username or password")
@@ -122,7 +122,7 @@ def delete_user(username):
     # delete user from session cookie.
     session.pop("user")
     return redirect(url_for("index"))
-    
+
 
 # LOG OUT LINK WILL REDIRECT THE USER TO HOME PAGE
 @app.route("/logout")
@@ -191,13 +191,8 @@ def delete_recipe(recipe_id):
 
 
 # SINGLE RECIPE SHOWN WHEN CLICKING THE RECIPE CARD FROM INDEX PAGE
-
-    """
-    CODE TAKEN FROM
-    https://github.com/Sean-Mc-Mahon/McTasticRecipes
-
-    """
-
+    # CODE TAKEN FROM
+    # https://github.com/Sean-Mc-Mahon/McTasticRecipes
 
 @app.route("/single_recipe/<recipe_id>")
 def single_recipe(recipe_id):
@@ -205,9 +200,8 @@ def single_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     username = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})["author"]
-    return render_template("single_recipe.html",
-        recipe=recipe,
-        username=username)
+    return render_template(
+        "single_recipe.html", recipe=recipe, username=username)
 
 
 if __name__ == "__main__":
