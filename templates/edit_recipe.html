@@ -20,16 +20,16 @@
                     <select id="type" name="type" class="validate" required>
 
                         <option value="" disabled>Course</option>
-                        {% if recipe.type == "First Dish" %}
+                        {% if recipe.type == "First Course" %}
                             <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option>
                             <option value="Main Course">Main Course</option>
                             <option value="Dessert">Dessert</option>
                         {% elif recipe.type == "Main Course" %}
-                            <option value="First Dish">First Dish</option>
+                            <option value="First Dish">First Course</option>
                             <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option> 
                             <option value="Dessert">Dessert</option>
                         {% else %}
-                            <option value="First Dish">First Dish</option>
+                            <option value="First Dish">First Course</option>
                             <option value="Main Course">Main Course</option> 
                             <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option>
                         {% endif %}
@@ -157,7 +157,7 @@
 
                     <!--EDIT BUTTON-->
                     <button type="submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit ">
-                        Edit Recipe <i class="fas fa-edit"></i>
+                        Submit <i class="fas fa-edit"></i>
                     </button>
                 </div>
                 <div class="col s6 center-align">

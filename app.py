@@ -176,7 +176,13 @@ def edit_recipe(recipe_id):
             "image": request.form.get("image")
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
+        recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        username = mongo.db.recipes.find_one(
+            {"_id": ObjectId(recipe_id)})["author"]
+
         flash("Recipe Succesfully Updated!")
+        return render_template(
+            "single_recipe.html", recipe=recipe, username=username)
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)

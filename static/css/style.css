@@ -94,9 +94,7 @@ body::after {
 /* FLASH MESSAGES */
 
 .flash-text{
-    margin-top: 35px;
-    border: 3px solid ;
-    border-radius: 20px;
+    margin-top: 50px;
     color: #795548;
 }
 
@@ -136,6 +134,10 @@ body::after {
 .desc {
     font-size: 15px;
     margin-bottom: 10px;
+}
+
+.container-single {
+    margin-top: 50px;
 }
 
 .image-recipe {
