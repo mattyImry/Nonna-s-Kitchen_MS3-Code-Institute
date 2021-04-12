@@ -156,6 +156,7 @@ def logout():
 # ADD RECIPE TO DATABASE
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+
     if request.method == "POST":
         recipe = {
             "type": request.form.get("type"),
@@ -180,6 +181,7 @@ def add_recipe():
 # UPDATE RECIPE TO DATABASE
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+
     if request.method == "POST":
         submit = {
             "type": request.form.get("type"),
