@@ -146,4 +146,4 @@ On the mobile view the navbar will be showing the logo on the left hand side but
 
 * When adding the modal from Materialize I had a problem when deleting the recipe. The recipe deleted wasn't the one intended. I then discover that the modal needs a unique ID. By applying the `recipe._Id` to the id required by the modal, the recipe that gets deleted is now the correct one.
 
-* When looking at the main page with all the recipes displayed, the second column doesn't have a recipe.  Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/bug_display_index_html.jpg) to view a screenshot of the recipes collection.
+* When looking at the main page with all the recipes displayed, the second column doesn't have a recipe.  Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/bug_display_index_html.jpg) to view a screenshot of the recipes collection. When I have added pagination to the index.html page this issue has been solved.

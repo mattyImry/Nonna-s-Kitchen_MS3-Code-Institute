@@ -79,17 +79,20 @@
 
         <!--PAGINATION -->
 
-        {% if number_recipes > 0 %}
-            <h5 class="center-align brown-text darken-4 ">{{ number_recipes }} Recipe</h5>
-                <ul>
+        <div class="row">
+            <h5 class="center-align brown-text darken-4 recipe-number">{{ number_recipes }} Recipe</h5>
+                <ul class="center-align brown-text darken-4">
                     {% for page_num in pages %}
                         {% if page_num == current_page %}
-                            <li class="center-align brown-text darken-4"><a href="#">{{ page_num }}</a></li>
+                            <li class="active list-pages"><a href="#">{{ page_num }}</a></li>
+                            {% else %}
+                            <li class="list-pages">
+                                <a href="{{ url_for('index', current_page=page_num) }}">{{ page_num }}</a>
+                            </li>
                         {% endif %}
-
                     {% endfor %}
                 </ul>
-        {% endif %}   
+        </div>
     </div>   
 {% endblock %}
 

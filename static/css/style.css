@@ -69,6 +69,14 @@ body::after {
     padding-bottom: 5px;
 }
 
+.recipe-number {
+    font-weight: 600;
+}
+
+.list-pages {
+    display: inline-block;
+    font-size: 20px;
+}
 /* REGISTER.HTML PAGE */
 
 .icon {
