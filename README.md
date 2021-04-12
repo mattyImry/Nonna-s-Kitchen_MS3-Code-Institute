@@ -134,7 +134,7 @@ On the mobile view the navbar will be showing the logo on the left hand side but
 * The logged in User will be able to delete his own account from "My profile" page.
 * The logged in User will be able to search recipes via the search functionality in the "My profile" page.
 * All the information for the recipes and users will be stored by using [MongoDB](https://www.mongodb.com/). The informations will be retrieve and send with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/).
-* Pagination from [Flask](https://flask.palletsprojects.com/en/1.1.x/) is also implememted.
+* Pagination from [Flask](https://flask.palletsprojects.com/en/1.1.x/) is also implemented.
 
 
 

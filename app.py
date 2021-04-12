@@ -42,7 +42,8 @@ def index():
     return render_template(
         "index.html", recipes=recipes,
         current_page=current_page, pages=pages,
-        recipes_per_page=recipes_per_page)
+        recipes_per_page=recipes_per_page,
+        number_recipes=number_recipes)
 
 
 # SEARCH FUNCTIONALITY

@@ -25,6 +25,8 @@
         <div class="row ">     
         {% if recipes_per_page > 0 %}
             {% for recipe in recipes %}
+                
+
                 <div class="col s12 m6">
 
                     <!--RECIPES CARD-->
@@ -67,12 +69,27 @@
                             </div>
                         </div>
                     </div>
-                </div>    
+                </div>
+                    
             {% endfor %}
         </div> 
         {% else %}
             <h3 class="center-align title-add_recipe brown-text darken-4">No recipe found!</h3>
         {% endif %}  
+
+        <!--PAGINATION -->
+
+        {% if number_recipes > 0 %}
+            <h5 class="center-align brown-text darken-4 ">{{ number_recipes }} Recipe</h5>
+                <ul>
+                    {% for page_num in pages %}
+                        {% if page_num == current_page %}
+                            <li class="center-align brown-text darken-4"><a href="#">{{ page_num }}</a></li>
+                        {% endif %}
+
+                    {% endfor %}
+                </ul>
+        {% endif %}   
     </div>   
 {% endblock %}
 
