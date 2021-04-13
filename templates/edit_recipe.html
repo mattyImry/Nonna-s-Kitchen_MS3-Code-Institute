@@ -25,11 +25,11 @@
                             <option value="Main Course">Main Course</option>
                             <option value="Dessert">Dessert</option>
                         {% elif recipe.type == "Main Course" %}
-                            <option value="First Dish">First Course</option>
+                            <option value="First Course">First Course</option>
                             <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option> 
                             <option value="Dessert">Dessert</option>
                         {% else %}
-                            <option value="First Dish">First Course</option>
+                            <option value="First Course">First Course</option>
                             <option value="Main Course">Main Course</option> 
                             <option value="{{ recipe.type }}" selected>{{ recipe.type }}</option>
                         {% endif %}
@@ -125,8 +125,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="ingredients" name="ingredients" class="materialize-textarea validate brown-text" required>
-                    {% for recipe in recipe.ingredients %}
-                        {{ recipe }} 
+                    {% for ingredient in recipe.ingredients %}
+                        {{- ingredient -}} 
                     {% endfor %}
                     </textarea>
                     <label for="ingredients">Ingredients</label>
@@ -137,8 +137,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="preparation" name="preparation" class="materialize-textarea validate brown-text" required>
-                    {% for recipe in recipe.preparation %}
-                        {{ recipe }} 
+                    {% for prep in recipe.preparation %}
+                        {{- prep -}} 
                     {% endfor %}
                     </textarea>
                     <label for="preparation">Preparation</label>
