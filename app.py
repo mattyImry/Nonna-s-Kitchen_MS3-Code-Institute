@@ -118,15 +118,26 @@ def myprofile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    recipes_per_page = 4
+    current_page = int(request.args.get('current_page', 1))
+    recipes = mongo.db.recipes.find().skip(
+        (current_page - 1)*recipes_per_page).sort(
+            '_id', pymongo.DESCENDING).skip(
+                (current_page - 1)*recipes_per_page).limit(recipes_per_page)
+    number_recipes = recipes.count()
+    pages = range(1, int(math.ceil(number_recipes / recipes_per_page)) + 1)
+
     # display user and number of recipes for the current user
-    recipes = mongo.db.recipes.find()
+    # recipes = mongo.db.recipes.find()
     user_number_of_recipes = mongo.db.recipes.count({"author": username})
 
     if session["user"]:
         return render_template(
             "myprofile.html", username=username,
             user_number_of_recipes=user_number_of_recipes,
-            recipes=recipes)
+            recipes=recipes, current_page=current_page,
+            pages=pages, number_recipes=number_recipes,
+            recipes_per_page=recipes_per_page)
 
     return redirect(url_for("login"))
 

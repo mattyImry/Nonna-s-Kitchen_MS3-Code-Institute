@@ -25,15 +25,13 @@
         <div class="row ">     
         {% if recipes_per_page > 0 %}
             {% for recipe in recipes %}
-                
-
-                <div class="col s12 m6">
+                <div class="col s12 m6 ">
 
                     <!--RECIPES CARD-->
-                    <div class="card">
+                    <div class="card ">
                         <a href="{{ url_for('single_recipe', recipe_id=recipe._id) }}">    
                             <div class="card-image">
-                                <img src="{{ recipe.image }}" alt="{{recipe.recipe_name}}">                       
+                                <img src="{{ recipe.image }}" alt="{{recipe.recipe_name}}" class="image-card">                       
                             </div>
                             <div class="card-content center-align">
                                 <div><h4 class="brown-text darken-4 center-align"> {{recipe.recipe_name}} </h4></div>
@@ -75,26 +73,24 @@
         </div> 
         {% else %}
             <h3 class="center-align title-add_recipe brown-text darken-4">No recipe found!</h3>
-        {% endif %}  
+        {% endif %}
 
         <!--PAGINATION -->
-        {% if number_recipes > 4 %}
-            <div class="row">
-                <h5 class="center-align brown-text darken-4 recipe-number">{{ number_recipes }} Recipe</h5>
-                    <ul class="center-align brown-text darken-4">
-                        {% for page_num in pages %}
-                            {% if page_num == current_page %}
-                                <li class="active list-pages"><a href="#">{{ page_num }}</a></li>
-                                {% else %}
-                                <li class="list-pages">
-                                    <a href="{{ url_for('index', current_page=page_num) }}">{{ page_num }}</a>
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-            
-            </div>
-        {% endif %}
+       
+        <div class="row">
+            <h5 class="center-align brown-text darken-4 recipe-number">{{ number_recipes }} Recipe</h5>
+                <ul class="center-align brown-text darken-4">
+                    {% for page_num in pages %}
+                        {% if page_num == current_page %}
+                            <li class="active list-pages"><a href="#">{{ page_num }}</a></li>
+                            {% else %}
+                            <li class="list-pages">
+                                <a href="{{ url_for('index', current_page=page_num, recipes_per_page=recipes_per_page) }}">{{ page_num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+        </div>
     </div>   
 {% endblock %}
 
