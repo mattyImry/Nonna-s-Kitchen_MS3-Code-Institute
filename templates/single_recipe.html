@@ -36,13 +36,17 @@
             <div class="row">
                 <div class="col s12 m7 center-align">
                     <h4 class="center-align title-add_recipe brown-text darken-4">Preparation</h4>
-                    {{- recipe.preparation -}}
+                    {% for recipe in recipe.preparation %}
+                        <p>{{ recipe }} </p>
+                    {% endfor %}
                 </div>
                 
                 <div class="col s12 m5 center-align">
                     <div class="divider divider-2"></div>
-                    <h4 class="center-align title-add_recipe brown-text darken-4">ingredients</h4>
-                    {{- recipe.ingredients -}} 
+                    <h4 class="center-align title-add_recipe brown-text darken-4">Ingredients</h4>
+                    {% for recipe in recipe.ingredients %}
+                        <p>{{ recipe }} </p>
+                    {% endfor %}
                 </div>
             </div>
             

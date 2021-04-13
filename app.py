@@ -167,8 +167,10 @@ def logout():
 # ADD RECIPE TO DATABASE
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-
+    # help from tutor team to write this code
     if request.method == "POST":
+        ingredients = request.form.get("ingredients").split(",")
+        preparation = request.form.get("preparation").split(".")
         recipe = {
             "type": request.form.get("type"),
             "recipe_name": request.form.get("recipe_name"),
@@ -176,8 +178,8 @@ def add_recipe():
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
             "serving": request.form.get("serving"),
-            "ingredients": request.form.get("ingredients"),
-            "preparation": request.form.get("preparation"),
+            "ingredients": ingredients,
+            "preparation": preparation,
             "is_vegetarian": request.form.get("is_vegetarian"),
             "author": session["user"],
             "image": request.form.get("image")
@@ -194,6 +196,9 @@ def add_recipe():
 def edit_recipe(recipe_id):
 
     if request.method == "POST":
+        ingredients = request.form.get("ingredients").split(",")
+        preparation = request.form.get("preparation").split(".")
+
         submit = {
             "type": request.form.get("type"),
             "recipe_name": request.form.get("recipe_name"),
@@ -201,8 +206,8 @@ def edit_recipe(recipe_id):
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
             "serving": request.form.get("serving"),
-            "ingredients": request.form.get("ingredients"),
-            "preparation": request.form.get("preparation"),
+            "ingredients": ingredients,
+            "preparation": preparation,
             "is_vegetarian": request.form.get("is_vegetarian"),
             "author": session["user"],
             "image": request.form.get("image")
@@ -239,7 +244,7 @@ def single_recipe(recipe_id):
     username = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})["author"]
     return render_template(
-        "single_recipe.html", recipe=recipe, username=username)
+        "single_recipe.html", recipe=recipe, username=username,)
 
 
 if __name__ == "__main__":

@@ -125,7 +125,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="ingredients" name="ingredients" class="materialize-textarea validate brown-text" required>
-                    {{- recipe.ingredients -}} 
+                    {% for recipe in recipe.ingredients %}
+                        {{ recipe }} 
+                    {% endfor %}
                     </textarea>
                     <label for="ingredients">Ingredients</label>
                 </div>
@@ -135,7 +137,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="preparation" name="preparation" class="materialize-textarea validate brown-text" required>
-                    {{- recipe.preparation -}}
+                    {% for recipe in recipe.preparation %}
+                        {{ recipe }} 
+                    {% endfor %}
                     </textarea>
                     <label for="preparation">Preparation</label>
                 </div>
