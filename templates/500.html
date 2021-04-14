@@ -2,14 +2,14 @@
 {% block content %}
 
     <!--ERROR 500-->
-    <div class="row S12"> 
-        <div class="col S12 card-panel grey lighten-5">
-            <h3 class="center-align title-pages brown-text darken-4">Error 500</h3>
-            <h5 class="center-align title-pages brown-text darken-4">An unexpected error has occurred. 
-                Click the button below to go back. 
+    <div class="row row-error "> 
+        <div class="col S12 m8 offset-m2 card-panel grey lighten-5 center-align">
+            <h3 class="title-pages brown-text darken-4">Error 500</h3>
+            <h5 class="title-pages brown-text darken-4">An unexpected error has occurred. 
+                Click the button below to go back to the main page. 
             </h5>
-            <a href="{{ url_for('index') }}" class="btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
-                Home <i class="fas fa-window-close"></i>
+            <a href="{{ url_for('index') }}" class="btn-large brown lighten-2 text-shadow waves-effect waves-light btn-error">
+                Home <i class="fas fa-home"></i>
             </a> 
         </div>
     </div>  

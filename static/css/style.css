@@ -184,3 +184,14 @@ body::after {
     }
 }
 
+/* 404.HTML 500.HTML PAGEs*/
+
+.row-error{
+    margin-top: 40px;
+}
+.btn-error{
+    border-radius: 20px;
+    border: 3px solid;
+    border-color: #795548;
+    margin: 25px 0px
+}
