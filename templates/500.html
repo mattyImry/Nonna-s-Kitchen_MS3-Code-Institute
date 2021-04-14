@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!--ERROR 500-->
+    <div class="row S12"> 
+        <div class="col S12 card-panel grey lighten-5">
+            <h3 class="center-align title-pages brown-text darken-4">Error 500</h3>
+            <h5 class="center-align title-pages brown-text darken-4">An unexpected error has occurred. 
+                Click the button below to go back. 
+            </h5>
+            <a href="{{ url_for('index') }}" class="btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
+                Home <i class="fas fa-window-close"></i>
+            </a> 
+        </div>
+    </div>  
+
+
+
+{% endblock %}
