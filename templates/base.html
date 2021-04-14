@@ -68,8 +68,18 @@
             </div>
         </div>
         </header>
+        
+        <!--BACKGROUND VIDEO-->
+        <div class="bg-video">
+            <video class="bg-video-content" autoplay muted loop>
+                <source src="{{ url_for('static', filename='img/video.mp4') }}" type="video/mp4">
+                <source src="{{ url_for('static', filename='img/video.webm') }}" type="video/webm">
+                Your browser is not supported!   
+            </video>
+        </div>
 
     <section>
+        
         <!--FLASH MESSAGES-->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -86,7 +96,7 @@
         {% block content %}
         {% endblock %}
     </main>
-
+    
     <!--FOOTER-->
     <footer class="page-footer text-shadow  brown lighten-2 ">
         <div class="footer-copyright ">

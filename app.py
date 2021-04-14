@@ -49,9 +49,27 @@ def index():
 # SEARCH FUNCTIONALITY
 @app.route("/search", methods=["GET", "POST"])
 def search():
+
+    # idea & code for pagination  taken from
+    # https://github.com/Sean-Mc-Mahon/McTasticRecipes
+    # pagination
+
+    recipes_per_page = 4
+    current_page = int(request.args.get('current_page', 1))
+    recipes = mongo.db.recipes.find().skip(
+        (current_page - 1)*recipes_per_page).sort(
+            '_id', pymongo.DESCENDING).skip(
+                (current_page - 1)*recipes_per_page).limit(recipes_per_page)
+    number_recipes = recipes.count()
+    pages = range(1, int(math.ceil(number_recipes / recipes_per_page)) + 1)
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("index.html", recipes=recipes)
+
+    return render_template(
+        "index.html", recipes=recipes,
+        current_page=current_page, pages=pages,
+        recipes_per_page=recipes_per_page,
+        number_recipes=number_recipes)
 
 
 # REGISTER PAGE

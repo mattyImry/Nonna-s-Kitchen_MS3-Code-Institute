@@ -10,6 +10,21 @@ $(document).ready(function(){
     /* ADD CURRENT YEAR TO FOOTER CODE */
     $(".year").text((new Date).getFullYear());
 
+    /* ZOOM IN ON IMAGE RECIPES , BUTTONS ON HOVER*/
+    $(".image-card, .btn-submit, .btn-error ").hover(
+        function() {
+            $(this).animate({"zoom": 1.2 }, 300);
+        },
+        function() {
+            $(this).animate({"zoom": 1 }, 300);
+        });
+
+    
+
+
+
+
+
     /* MATERIALIZE VALIDATION CODE TO ACTIVATE VALIDATION ON DROP DOWN MENU. 
         CODE TAKEN FROM CI TUTORIAL*/
         
