@@ -50,8 +50,8 @@
                 </div>
             </div>
             
-            <!--IF CURRENT USER LOG IN SHOWING BUTTON TO EDIT RECIPE-->
-            {% if session.user|lower == recipe.author|lower %}
+            <!--IF CURRENT USER OR ADMIN LOG IN SHOWING BUTTON TO EDIT RECIPE-->
+            {% if session.user|lower == recipe.author|lower or session.user|lower == "admin" %}
                 <div class="row">
                     <div class="col s6 center-align">
 

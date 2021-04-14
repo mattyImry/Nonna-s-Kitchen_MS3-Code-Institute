@@ -114,7 +114,7 @@ def login():
 # PROFILE'S USER PAGE
 @app.route("/myprofile/<username>", methods=["GET", "POST"])
 def myprofile(username):
-    # session user' username form database
+    # session user's username form database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -167,9 +167,12 @@ def logout():
 # ADD RECIPE TO DATABASE
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    # help from tutor team to write this code
+
     if request.method == "POST":
-         # help from tutor team to write code for splittin ingredients and preparetion
+
+        # help from tutor team to write code
+        # for splittin ingredients and preparetion
+
         ingredients = request.form.get("ingredients").split(",")
         preparation = request.form.get("preparation").split(".")
         recipe = {
@@ -197,7 +200,10 @@ def add_recipe():
 def edit_recipe(recipe_id):
 
     if request.method == "POST":
-        # help from tutor team to write code for splittin ingredients and preparetion
+
+        # help from tutor team to write code
+        # for splittin ingredients and preparetion
+
         ingredients = request.form.get("ingredients").split(",")
         preparation = request.form.get("preparation").split(".")
 
