@@ -57,19 +57,23 @@
 
                         <!--EDIT BUTTON-->
                         <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
-                            class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light"> Edit <i class="fas fa-edit"></i></a>
+                            class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light"> Edit <i class="fas fa-edit"></i>
+                        </a>
                     </div>
                     <div class="col s6 center-align">
 
                         <!--CANCEL BUTTON-->
-                        <a href="{{ url_for('index') }}" class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light modal-trigger"> Cancel    <i class="fas fa-window-close"></i></a>
+                        <a href="{{ url_for('index') }}" class="btn btn-submit brown lighten-2 text-shadow waves-effect waves-light modal-trigger"> Cancel      <i class="fas fa-window-close"></i>
+                        </a>
                     </div>
                 </div>   
             {% endif %}
                 <div class="divider divider-3"></div>
 
                 <!--AUTHOR-->
-                <div class="brown-text lighten-4 center-align desc"> <i class="fas fa-user-check fa-2x icon"></i><span class="class-list"> Author:</span> {{ recipe.author }}</div>
+                <div class="brown-text lighten-4 center-align desc"> <i class="fas fa-user-check fa-2x icon"></i><span class="class-list"> Author:</span> 
+                    {{ recipe.author }}
+                </div>
         </section>   
     </div>    
 {% endblock %}

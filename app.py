@@ -255,6 +255,18 @@ def single_recipe(recipe_id):
         "single_recipe.html", recipe=recipe, username=username,)
 
 
+# 404 ERROR NOT FOUND
+@app.errorhandler(404)
+def error_handler_404(error):
+    return render_template("404.html"), 404
+
+
+# 500 INTERNAL SERVER ERROR
+@app.errorhandler(500)
+def error_handler_500(error):
+    return render_template("500.html"), 500
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

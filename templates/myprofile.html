@@ -22,7 +22,7 @@
         <!--DISPLAYING USER RECIPES-->
         <div class="row ">
             {% for recipe in recipes %}
-                {% if session.user|lower == recipe.author|lower %}
+                {% if session.user|lower == recipe.author|lower or session.user|lower == "admin" %}
             <div class="col s12 m6 ">
                 <a href="{{ url_for('single_recipe', recipe_id=recipe._id) }}">
                     <div class="card ">
