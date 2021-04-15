@@ -4,7 +4,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo, pymongo
-from flask_paginate import get_page_args
+# from flask_paginate import get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -112,7 +112,7 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 # if username and password match create session cookie
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome back {}".format(
+                flash("Welcome back {}!".format(
                     request.form.get("username")))
                 return redirect(url_for(
                         "myprofile", username=session["user"]))
@@ -271,6 +271,13 @@ def single_recipe(recipe_id):
         {"_id": ObjectId(recipe_id)})["author"]
     return render_template(
         "single_recipe.html", recipe=recipe, username=username,)
+
+
+# CONTACT US PAGE
+@app.route("/contact_us", methods=["GET", "POST"])
+def contact_us():
+    
+    return render_template("contact_us.html")
 
 
 # 404 ERROR NOT FOUND

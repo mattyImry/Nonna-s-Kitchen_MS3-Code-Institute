@@ -137,7 +137,8 @@ body::after {
 }
 
 .row-form-register {
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 /* FLASH MESSAGES */
@@ -217,7 +218,15 @@ body::after {
     }
 }
 
-/* 404.HTML 500.HTML PAGEs*/
+/* CONTACT US PAGE*/
+
+.contact-title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* 404.HTML 500.HTML PAGES*/
 
 .row-error{
     margin-top: 40px;
