@@ -3,7 +3,7 @@
     <h3 class="center-align title-pages brown-text darken-4 contact-title">Get in touch</h3>
 
 <div class="row row-form-register ">
-    <form class="col s12 m8 offset-m2" id="contact-form" method="POST" action="{{ url_for('contact_us') }}" onsubmit="return sendMail(this);">
+    <form class="col s12 m8 offset-m2" id="contact-form" onsubmit="return sendMail(this);">
         <!--CONTACT FORM-->
         <div class="card-panel grey lighten-4">
             
@@ -21,8 +21,8 @@
                 <!--EMAIL-->
                 <div class="input-field prefix col s12">
                     <i class="fas fa-envelope prefix icon"></i>
-                    <input id="email" name="email" type="email" class="validate brown-text" required>
-                    <label for="email" class="brown-text darken-4">E-mail address</label>
+                    <input id="emailaddress" name="emailaddress" type="email" class="validate brown-text" required>
+                    <label for="emailaddress" class="brown-text darken-4">E-mail address</label>
                     
                 </div>
             </div>
@@ -31,7 +31,7 @@
                  <!--MESSAGE-->
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix icon"></i>
-                    <textarea id="message" name="message" class="materialize-textarea validate brown-text" required></textarea>
+                    <textarea id="message" name="message" class="materialize-textarea validate brown-text " required></textarea>
                     <label for="message">Your message</label>
                 </div>
             </div>
@@ -39,22 +39,13 @@
 
                 <!--SEND MESSAGE-->
                 <div class="col s12 center-align">
-                    <a type="submit" value="Submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit modal-trigger" href="#modal1">
+                    <button type="submit" value="Submit" name="submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
                         Send <i class="fas fa-paper-plane"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
     </form>
-
-    <!-- MODAL CONFIRMATION -->
-    <div id="modal1" class="modal">
-        <div class="modal-content center-align">   
-            <h4 class="center-align brown-text darken-4">Message sent succesfully!</h4>
-            <p> We will get back to you as soon as possible.</p>
-        </div>
-    </div>
-
 </div> 
 
 

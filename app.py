@@ -220,7 +220,7 @@ def edit_recipe(recipe_id):
     if request.method == "POST":
 
         # help from tutor team to write code
-        # for splittin ingredients and preparetion
+        # for splitting ingredients and preparetion
 
         ingredients = request.form.get("ingredients").split(",")
         preparation = request.form.get("preparation").split(".")
