@@ -276,7 +276,6 @@ def single_recipe(recipe_id):
 # CONTACT US PAGE
 @app.route("/contact_us", methods=["GET", "POST"])
 def contact_us():
-    
     return render_template("contact_us.html")
 
 

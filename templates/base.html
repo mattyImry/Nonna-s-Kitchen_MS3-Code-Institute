@@ -17,6 +17,10 @@
     {% endblock %}
     
     <title>Nonna's Kitchen</title>
+
+    <!--EMAILJS SCRIPT-->
+    <script  src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -126,6 +130,16 @@
 
     <!--JAVASCRIPT CUSTOM SCRIPT-->
     <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+
+    <!--JAVASCRIPT CUSTOM SCRIPT EMAILJS-->
+    <script src="{{ url_for('static', filename='js/email.js')}}"></script>
+
+    <!--EMAILJS-->
+    <script>
+        (function(){
+            emailjs.init("user_M1g6gtr6UnTLcQUBonRhH");
+        })();
+    </script>    
 
     {% block script %}
     {% endblock %}

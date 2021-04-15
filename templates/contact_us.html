@@ -3,7 +3,7 @@
     <h3 class="center-align title-pages brown-text darken-4 contact-title">Get in touch</h3>
 
 <div class="row row-form-register ">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('contact_us') }}">
+    <form class="col s12 m8 offset-m2" id="contact-form" method="POST" action="{{ url_for('contact_us') }}" onsubmit="return sendMail(this);">
         <!--CONTACT FORM-->
         <div class="card-panel grey lighten-4">
             
@@ -27,17 +27,19 @@
                 </div>
             </div>
             <div class="row">
+
+                 <!--MESSAGE-->
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix icon"></i>
-                    <textarea id="textarea1" name="textarea1" class="materialize-textarea validate brown-text" required></textarea>
-                    <label for="textarea1">Your message</label>
+                    <textarea id="message" name="message" class="materialize-textarea validate brown-text" required></textarea>
+                    <label for="message">Your message</label>
                 </div>
             </div>
             <div class="row">
 
                 <!--SEND MESSAGE-->
                 <div class="col s12 center-align">
-                    <a type="submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit modal-trigger" href="#modal1">
+                    <a type="submit" value="Submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit modal-trigger" href="#modal1">
                         Send <i class="fas fa-paper-plane"></i>
                     </a>
                 </div>
