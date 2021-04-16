@@ -72,23 +72,23 @@
                     
             {% endfor %}
         </div> 
-        {% else %}
-            <h3 class="center-align title-add_recipe brown-text darken-4">No recipe found!</h3>
         {% endif %}
 
         <!--PAGINATION -->
        
         <div class="row">
-            <h5 class="center-align brown-text darken-4 recipe-number">{{ number_recipes }} Recipe</h5>
+            <h5 class="center-align brown-text darken-4 recipe-number">{{ number_recipes }} Recipes</h5>
                 <ul class="center-align brown-text darken-4">
                     {% for page_num in pages %}
                         {% if page_num == current_page %}
-                            <li class="active list-pages"><a href="#">{{ page_num }}</a></li>
+                            <li class="active list-pages"><a href="#" class="number_page">{{ page_num }}</a></li>
                             {% else %}
                             <li class="list-pages">
                                 <a href="{{ url_for('index', current_page=page_num, recipes_per_page=recipes_per_page) }}">{{ page_num }}</a>
                             </li>
                         {% endif %}
+                    {% else %}
+                        <h3 class="center-align title-add_recipe brown-text darken-4">No recipe found!</h3>
                     {% endfor %}
                 </ul>
         </div>

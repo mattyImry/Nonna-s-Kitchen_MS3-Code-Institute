@@ -107,12 +107,6 @@ body::after {
     font-weight: 600;
 }
 
-.list-pages {
-    display: inline-block;
-    font-size: 20px;
-}
-
-
 /* REGISTER.HTML PAGE */
 
 .icon {
@@ -225,6 +219,23 @@ body::after {
     margin-bottom: 20px;
 }
 
+/* PAGINATION NUMBERS*/
+
+.list-pages {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 8px;
+}
+
+li.active {
+    font-size: 22px;
+    border: 1px solid #795548;
+    background-color: aliceblue;
+}
+
+.number_page{
+    color: #795548;
+}
 
 /* 404.HTML 500.HTML PAGES*/
 
