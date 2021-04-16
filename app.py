@@ -56,20 +56,29 @@ def search():
 
     recipes_per_page = 4
     current_page = int(request.args.get('current_page', 1))
-    recipes = mongo.db.recipes.find().skip(
-        (current_page - 1)*recipes_per_page).sort(
-            '_id', pymongo.DESCENDING).skip(
-                (current_page - 1)*recipes_per_page).limit(recipes_per_page)
+
+    if request.method == "POST":
+        query = request.form.get("query")
+    else:
+        query = request.args.get("query")
+
+    sort_by = "Sort by"
+
+    recipes = mongo.db.recipes.find(
+        {"$text": {"$search": str(
+            query)}}).sort('_id', pymongo.DESCENDING).skip(
+            (current_page - 1)*recipes_per_page).limit(recipes_per_page)
+
     number_recipes = recipes.count()
+
     pages = range(1, int(math.ceil(number_recipes / recipes_per_page)) + 1)
-    query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
 
     return render_template(
         "index.html", recipes=recipes,
         current_page=current_page, pages=pages,
         recipes_per_page=recipes_per_page,
-        number_recipes=number_recipes)
+        number_recipes=number_recipes,
+        query=query, sort_by=sort_by)
 
 
 # REGISTER PAGE
@@ -136,12 +145,19 @@ def myprofile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    # idea & code for pagination  taken from
+    # https://github.com/Sean-Mc-Mahon/McTasticRecipes
+    # pagination for user's profile
+
+    user_recipes = mongo.db.recipes.find({"author": username})
+    number_of_user_rec = user_recipes.count()
     recipes_per_page = 4
+
     current_page = int(request.args.get('current_page', 1))
-    recipes = mongo.db.recipes.find().skip(
-        (current_page - 1)*recipes_per_page).sort(
-            '_id', pymongo.DESCENDING).skip(
-                (current_page - 1)*recipes_per_page).limit(recipes_per_page)
+
+    recipes = user_recipes.sort('_id', pymongo.DESCENDING).skip(
+            (current_page - 1) * recipes_per_page).limit(recipes_per_page)
+
     number_recipes = recipes.count()
     pages = range(1, int(math.ceil(number_recipes / recipes_per_page)) + 1)
 
@@ -155,7 +171,9 @@ def myprofile(username):
             user_number_of_recipes=user_number_of_recipes,
             recipes=recipes, current_page=current_page,
             pages=pages, number_recipes=number_recipes,
-            recipes_per_page=recipes_per_page)
+            recipes_per_page=recipes_per_page,
+            user_recipes=user_recipes,
+            number_of_user_rec=number_of_user_rec)
 
     return redirect(url_for("login"))
 
@@ -216,7 +234,9 @@ def add_recipe():
 # UPDATE RECIPE TO DATABASE
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-
+    """
+    ADD COMMENTS HERE IN EVERY FUNCTION
+    """
     if request.method == "POST":
 
         # help from tutor team to write code
