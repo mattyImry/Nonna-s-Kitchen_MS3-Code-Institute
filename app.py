@@ -4,7 +4,6 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo, pymongo
-# from flask_paginate import get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -127,7 +126,6 @@ def register():
     return render_template("register.html")
 
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
@@ -166,7 +164,6 @@ def login():
     return render_template("login.html")
 
 
-
 @app.route("/myprofile/<username>", methods=["GET", "POST"])
 def myprofile(username):
     """
@@ -175,6 +172,7 @@ def myprofile(username):
     Only when user is logged in
     can view its profile
     """
+
     # session user's username form database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -211,7 +209,6 @@ def myprofile(username):
     return redirect(url_for("login"))
 
 
-
 @app.route("/delete_user/<username>")
 def delete_user(username):
     """
@@ -220,6 +217,7 @@ def delete_user(username):
     recipes created when
     logged in.
     """
+
     mongo.db.users.remove({"username": username})
     mongo.db.recipes.remove({"author": username})
     flash("Profile removed succesfully")
@@ -229,12 +227,11 @@ def delete_user(username):
     return redirect(url_for("index"))
 
 
-
 @app.route("/logout")
 def logout():
     """
     Log out the user from session
-    redirect the user to 
+    redirect the user to
     landing page
     """
 
@@ -245,12 +242,11 @@ def logout():
     return redirect(url_for("index"))
 
 
-
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     """
     Add recipe to the database
-    after filling the form  completely
+    after filling the form completely
     """
 
     if request.method == "POST":
@@ -281,11 +277,13 @@ def add_recipe():
     return render_template("add_recipe.html")
 
 
-# UPDATE RECIPE TO DATABASE
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     """
-    ADD COMMENTS HERE IN EVERY FUNCTION
+    Function to edit the recipe.
+    Only the user that created
+    the recipe and admin
+    can use edit button
     """
     if request.method == "POST":
 
@@ -308,6 +306,7 @@ def edit_recipe(recipe_id):
             "author": session["user"],
             "image": request.form.get("image")
         }
+
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         username = mongo.db.recipes.find_one(
@@ -321,43 +320,59 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe)
 
 
-# DELETE RECIPE FROM DATABASE
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
+    """
+    User when logged in or admin can
+    delete recipe from database
+    """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe deleted succesfully!")
     return redirect(url_for("index"))
 
 
-# SINGLE RECIPE SHOWN WHEN CLICKING THE RECIPE CARD FROM INDEX PAGE
-    # CODE TAKEN FROM
-    # https://github.com/Sean-Mc-Mahon/McTasticRecipes
-
 @app.route("/single_recipe/<recipe_id>")
 def single_recipe(recipe_id):
-
+    """
+    View the full description
+    of recipe when clicking card
+    on landing page
+    """
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     username = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})["author"]
+
     return render_template(
         "single_recipe.html", recipe=recipe, username=username,)
 
 
-# CONTACT US PAGE
-@app.route("/contact_us", methods=["GET", "POST"])
+@app.route("/contact_us")
 def contact_us():
+    """
+    Contact page for any user to be
+    able to send email to developer.
+    Also a confirmation email is sent to
+    user after filling the form
+    correctly
+    """
     return render_template("contact_us.html")
 
 
-# 404 ERROR NOT FOUND
 @app.errorhandler(404)
 def error_handler_404(error):
+    """
+    In case of page not found
+    display error 404
+    """
     return render_template("404.html"), 404
 
 
-# 500 INTERNAL SERVER ERROR
 @app.errorhandler(500)
 def error_handler_500(error):
+    """
+    In case of internal error
+    display error 500
+    """
     return render_template("500.html"), 500
 
 
