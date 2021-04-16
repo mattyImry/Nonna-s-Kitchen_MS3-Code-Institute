@@ -21,22 +21,30 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-# HOME PAGE
 @app.route("/")
 @app.route("/index")
 def index():
-
+    """
+    Landing page.
+    4 recipes can be viewed,
+    by clicking the card the
+    full recipe will be displayed.
+    """
     # idea & code for pagination  taken from
     # https://github.com/Sean-Mc-Mahon/McTasticRecipes
     # pagination
 
     recipes_per_page = 4
+
     current_page = int(request.args.get('current_page', 1))
+
     recipes = mongo.db.recipes.find().skip(
         (current_page - 1)*recipes_per_page).sort(
             '_id', pymongo.DESCENDING).skip(
                 (current_page - 1)*recipes_per_page).limit(recipes_per_page)
+
     number_recipes = recipes.count()
+
     pages = range(1, int(math.ceil(number_recipes / recipes_per_page)) + 1)
 
     return render_template(
@@ -46,9 +54,14 @@ def index():
         number_recipes=number_recipes)
 
 
-# SEARCH FUNCTIONALITY
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    Searching the database with the use
+    of searchbar in landing page
+    A number of recipe will be displayed and paginated
+    depending of the search made by user
+    """
 
     # idea & code for pagination  taken from
     # https://github.com/Sean-Mc-Mahon/McTasticRecipes
@@ -81,9 +94,16 @@ def search():
         query=query, sort_by=sort_by)
 
 
-# REGISTER PAGE
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Register a new user. Before registering the
+    username is checked to see if the same
+    one already exist.
+    If registration is complete
+    teh user is logged in.
+
+    """
     if request.method == "POST":
         # checking of users exist in database
         existing_user = mongo.db.user.find_one(
@@ -107,9 +127,17 @@ def register():
     return render_template("register.html")
 
 
-# LOGIN PAGE
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Log in the user after checkhing
+    the username and password.
+    In case of mistaken username or
+    password the user won't know
+    which is the wrong entry
+    to avoid force entry
+    """
     if request.method == "POST":
         # check if username exist in database
         existing_user = mongo.db.users.find_one(
@@ -138,15 +166,22 @@ def login():
     return render_template("login.html")
 
 
-# PROFILE'S USER PAGE
+
 @app.route("/myprofile/<username>", methods=["GET", "POST"])
 def myprofile(username):
+    """
+    Display user profile with
+    recipes created by user
+    Only when user is logged in
+    can view its profile
+    """
     # session user's username form database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     # idea & code for pagination  taken from
     # https://github.com/Sean-Mc-Mahon/McTasticRecipes
+
     # pagination for user's profile
 
     user_recipes = mongo.db.recipes.find({"author": username})
@@ -161,8 +196,6 @@ def myprofile(username):
     number_recipes = recipes.count()
     pages = range(1, int(math.ceil(number_recipes / recipes_per_page)) + 1)
 
-    # display user and number of recipes for the current user
-    # recipes = mongo.db.recipes.find()
     user_number_of_recipes = mongo.db.recipes.count({"author": username})
 
     if session["user"]:
@@ -178,9 +211,15 @@ def myprofile(username):
     return redirect(url_for("login"))
 
 
-# DELETE PROFILE'S USER AND USER'S RECIPES
+
 @app.route("/delete_user/<username>")
 def delete_user(username):
+    """
+    The user can delete
+    its own account and
+    recipes created when
+    logged in.
+    """
     mongo.db.users.remove({"username": username})
     mongo.db.recipes.remove({"author": username})
     flash("Profile removed succesfully")
@@ -190,9 +229,15 @@ def delete_user(username):
     return redirect(url_for("index"))
 
 
-# LOG OUT LINK WILL REDIRECT THE USER TO HOME PAGE
+
 @app.route("/logout")
 def logout():
+    """
+    Log out the user from session
+    redirect the user to 
+    landing page
+    """
+
     flash("You are now logged out")
 
     # delete user from session cookie.
@@ -200,9 +245,13 @@ def logout():
     return redirect(url_for("index"))
 
 
-# ADD RECIPE TO DATABASE
+
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    """
+    Add recipe to the database
+    after filling the form  completely
+    """
 
     if request.method == "POST":
 
@@ -211,6 +260,7 @@ def add_recipe():
 
         ingredients = request.form.get("ingredients").split(",")
         preparation = request.form.get("preparation").split(".")
+
         recipe = {
             "type": request.form.get("type"),
             "recipe_name": request.form.get("recipe_name"),
