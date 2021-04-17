@@ -178,3 +178,71 @@ For the testing section please refer to [TESTING.md](TESTING.md) file.
 
 * While testing emialjs even though the code was correct and the cache was cleared the functionality wasn't working. After a few hours worked. I do believe I had a problem with cache not clearing properly.
 
+## **_Deployment_**
+
+### **_Local deployment_**
+1. To clone this repository you can do it directly into your IDE by copying the following to your terminal:  
+  `git clone https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute `  
+Or you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
+2. In the terminal window change directory (CD) to the correct file location (directory that you have created for your repository).
+3. Set environment variables:
+* Create `env.py` in the root directory
+* In the `env.py` file at the top write `import os`
+* In the `env.py` set up the connection to your MongoDB database and a "SECRET KEY":  
+`os.environ.setdefault("MONGO_URI", "mongodb+srv:(your logins and password")`
+`os.environ.setdefault["SECRET_KEY"] = "YourSecretKey"`
+4. From the file requirements.txt install the requirements. In your terminal type:  
+`pip3 install -r requirements.txt`  
+Please make sure to add `sudo` if you are not using GitPod  
+`sudo pip3 install -r requirements.txt`
+
+5. Create an account if needed and a database in [Mongo DB Atlas](https://account.mongodb.com/)   
+
+6. In my cluster I have named the database `recipes_manager`
+7. In `recipes_manager` database create 2 collections:  
+ Users:  
+ `_id: <ObjectId>`  
+ `username : <String>`  
+ `password : <String>`  
+ Recipes  
+ `_id: <ObjectId>`   
+ `type: <String>`   
+ `recipe_name: <String>`  
+ `difficulty: <String>`  
+ `prep_time: <String>`  
+ `cook_time: <String>`
+ `serving: <String>`  
+ `ingredients : <Array>`  
+ `preparation : <Array>`  
+ `is_vegetarian: <String>`  
+ `author: <String>`  
+ `image: <String>`
+
+ 8. To run the application type in your terminal:  
+ `python3 run.py`
+
+ Now you can start deploying to [Heroku](https://www.heroku.com/).
+
+### **_Heroku deployment_**
+
+1. Create a requirement.txt file that is need to Heroku to confirm dependences. In your terminal please type:  
+`pip3 freeze > requirements.txt`
+
+
+2. Create a Procfile to confirm to heroku apps the commands that are executed by the app.  
+`echo web: python run.py > Procfile`
+3. Add, commit and push these files to GitHub.
+4. In Heroku create a new app.
+5. In Heroku you need to link Github to Heroku via the dashboard link "Deploy".  
+ Go to "Deployment method" and choose "GitHub".  
+ Then enable "Automatic deploys".
+
+ TO BE FINISH
+
+
+
+
+
+
+
+## **_Credits_**
