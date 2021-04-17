@@ -229,6 +229,7 @@ body::after {
 
 li.active {
     font-size: 22px;
+    border-radius: 15%;
     border: 1px solid #795548;
     background-color: aliceblue;
 }

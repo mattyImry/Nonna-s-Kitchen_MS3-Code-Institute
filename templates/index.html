@@ -77,7 +77,7 @@
         <!--PAGINATION -->
        
         <div class="row">
-            <h5 class="center-align brown-text darken-4 recipe-number">{{ number_recipes }} Recipes</h5>
+            <h4 class="center-align brown-text darken-4 recipe-number">{{ number_recipes }} Recipes</h4>
                 <ul class="center-align brown-text darken-4">
                     {% for page_num in pages %}
                         {% if page_num == current_page %}
@@ -88,7 +88,7 @@
                             </li>
                         {% endif %}
                     {% else %}
-                        <h3 class="center-align title-add_recipe brown-text darken-4">No recipe found!</h3>
+                        <h4 class="center-align title-add_recipe brown-text darken-4">No recipe found!</h4>
                     {% endfor %}
                 </ul>
         </div>

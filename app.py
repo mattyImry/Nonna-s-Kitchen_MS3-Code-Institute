@@ -100,7 +100,7 @@ def register():
     username is checked to see if the same
     one already exist.
     If registration is complete
-    teh user is logged in.
+    the user is logged in.
 
     """
     if request.method == "POST":

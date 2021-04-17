@@ -1,21 +1,21 @@
 # **_Nonna's Kitchen_**
 
-This project is my third Milestone Project for the [Code Institute](https://codeinstitute.net/) Fullstack Web Developer Diploma. This project is created to demonstate my ability to design and implement back-end functionality with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/). Data is stored in [MongoDB](https://www.mongodb.com/) a document-base database. I will be following the CRUD principles Create, Read, Update and Delete. With this priciples I can allow the User to store and manipulate his recipes in the database.
-The deployed application can be accessed here "ADD LINK"  
+This project is my third Milestone Project for the [Code Institute](https://codeinstitute.net/) Full Stack Software Developer Diploma. This project is created to demonstate my ability to design and implement back-end functionality with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/). Data is stored in [MongoDB](https://www.mongodb.com/) a document-base database. I will be following the CRUD principles Create, Read, Update and Delete. With this priciples I can allow the User to store and manipulate his recipes in the database.
+The deployed application can be accessed [here](https://nonna-kitchen-ms3.herokuapp.com/) . 
 
 ## **_UX_**  
 ### **_Strategy / Site Owner story_**
 
-I have design this website to allow the User to create and save recipes. The main Users will be people that love cooking and like to try new recipes. The Users can come to the website anytime to view the recipes written by themselves or by other users. Without registering the casual User can only view other Users' recipes. If the User decides to register will be able to create, store, modify and delete his own recipes, basically creating his own recipe book. There will be also an Admin functionality only for maintenance purposes. I have also created this website, as for the Developer I can collect other's Users recipes and try them myself. The main type of recipes created by the Developer will be Italian but any other type of cusine is welcome.  
+I have designed this website to allow the User to create, read, update and delete recipes. The main Users will be people that love cooking and like to try new recipes. The Users can come to the website anytime to view the recipes written by themselves or by other users. Without registering the casual User can only view other Users' recipes. If the User decides to register will be able to create, store, modify and delete his own recipes, basically creating his own recipe book. There will be also an Admin functionality only for maintenance purposes. I have also created this website, as for the Developer I can collect other's Users recipes and try them myself. The main type of recipes created by the Developer will be Italian but any other type of cusine is welcome.  
 
 #### **_Data schema_**
 The data is stored by using [MongoDB](https://www.mongodb.com/). The documents stored in collections in MongoDB are more flexible than SQL databases. Documents can be modified also during the development. I have created two collections. The first one is collection "recipes". This collection holds all the informations needed to prepare the recipes. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database_recipes.jpg) to view a screenshot of the recipes collection.  
 The second one is collection "Users". This collection will hold the username of the User and a password. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database_users.jpg) to view a screenshot of the users collection.  
-The connection between the two collections is achived by the `key` "author" stored in the recipes collection which is the same as the `key` "username" in the users. This key will guarantee that every recipe created will be only connected to the user that created it.
+The connection between the two collections is achived by the `key` "author" stored in the recipes collection which is the same as the `key` "username" in the users collection. This key will guarantee that every recipe created will be only connected to the user that created it.
 
 #### **_Security_**
 Due to the possibility on the website to register and being able to store information security features are implemented. By using [Flask](https://flask.palletsprojects.com/en/1.1.x/)  I will implement Password Hashing and salting with the use of Flask dependence called Werkzeug. Password hashing algorithm is supplied by Werkzeug  and the function is to mask the password inserted by the user during registration, so that can be stored safely in a database. Defensive programing will also be used during the production process.
-To protect password and sensible information for MongoDB and Flask a file called env.py has been created. 
+To protect password and sensible information for MongoDB and Flask a file called env.py has been created and visible only to the Developer. 
 
 
 ### **_Scope_**
@@ -30,7 +30,7 @@ Features that I want to implement are:
 *  Ability for the Users and developer register an account.
 *  Ability for the Users and developer to search recipes.
 *  Ability for the Users to contact the Developer with EmailJs functionality.
-*  Ability for the Admin to delete recipes and accouts.
+*  Ability for the Admin to delete recipes and accounts.
 *  Easy design and navigation.
 *  Mobile first design.
 
@@ -41,6 +41,7 @@ Features that I want to implement are:
 * A list of all recipes stored in the website will be shown to all the Users in the main page. 
 
 * The Users will be able to view all the recipes that they have created via "My profile" page.
+* A search function will allow Users to search recipes. To create the search functionality I have created an index in the database. This index is permanent and I have used the following `key` from the recipes collection to allow user search effectively: "recipe_name", "ingredients", "difficulty" and "type" which is the type of course.
 
 
 
@@ -55,7 +56,7 @@ Features that I want to implement are:
 
 * A search function will be present in the profile page. The profile page will only be visible when the user is logged in.
 
-* The Users can use the Navigation bar to navigate the different pages within the website.
+* The Users can use the Navigation bar to navigate the different sections within the website.
 
 * The collection of all recipes will be visible in a card style format in the index page.
 
@@ -65,9 +66,9 @@ Features that I want to implement are:
 
 * On the footer two links will be present to redirect the Users to the developer LinkedIn acoount and GitHub account.
 
-* The logo and "Home" link in the Navigation bar will redirect the Users to the main page.
+* The logo and "Home" link in the Navigation bar will redirect the Users to the main page and will always be present.
 
-* The contact page will hold a from to contact the developer.
+* The contact page will hold a form to contact the developer.
 
 
 ### **_Surface_**
@@ -100,7 +101,7 @@ The wireframe for the  single page is not the same as the finished page because 
 * As a User not registered I want to be able to contact the developer by usign the contact page form.
 * As a User registered I want to be able to log in to the website.
 * As a User logged in I want to be able to add recipes.
-* As a User logged in I want to be able to view my recipe and others.
+* As a User logged in I want to be able to view my recipe and other users' recipes.
 * As a User logged in I want to be able to edit my recipe.
 * As a User logged in I want to be able to delete my recipe.
 * As a User logged in I want to be able to delete my account.
@@ -125,25 +126,41 @@ On the mobile view the navbar will be showing the logo on the left hand side but
 * The unregistered Users can register an account via the "Register" page.
 * The register User can log in via the log in link in the navbar.
 * The User can log out via the log out link in the navbar.
-* Any visitor to the website can contact the developer via the contact form in the "Contact us" page which uses [EailJS](https://www.emailjs.com/) .
+* Any visitor to the website can contact the developer via the contact form in the "Contact us" page which uses [EailJS](https://www.emailjs.com/) . A reply via email to the user, to confirm the message sent, will also be received.
 * Any visitor to the website can search recipes via the search functionality in the "Index" page.
 * The logged in User can add his own recipe via the "Add recipe" page. 
 * The logged in User will be able to edit and delete his own recipes from "My profile" page and "Index" page.
 * The logged in User will be able to edit and delete his own recipes from "Index" page only if lodded in.
 * The logged in User will be able to edit his own recipes when recipe view via "Single recipe" page.
 * The logged in User will be able to delete his own account from "My profile" page.
-* The logged in User will be able to search recipes via the search functionality in the "My profile" page.
 * All the information for the recipes and users will be stored by using [MongoDB](https://www.mongodb.com/). The informations will be retrieve and send with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/).
-* Pagination from [Flask](https://flask.palletsprojects.com/en/1.1.x/) is also implemented.
+
 
 
 
 ### **_Features to be implemented_**
+In the future I would like to be able to let the user to download, shared the recipes via social media and via email.
+Also I would like to have the functionality to confirm registration via email, reset password if forgotten.
 
 
+## **_Technology Used_**  
+
+* [HTML](https://en.wikipedia.org/wiki/HTML) has been used in this project because is the standard markup language for documents designed to be displayed in a web browser.
+
+* [CSS](https://en.wikipedia.org/wiki/CSS)
+is a style sheet language. It is used to style markup language such as HTML.
+
+* [Gitpod](https://gitpod.io/) has been used as an on-line IDE followed by [Heroku](https://www.heroku.com/) for deployment. IDE is a software application used by computer programmers for software development.
+
+* [Googlefonts](https://fonts.google.com/) has been used to style the fonts of the writing on the web site.
+
+* [Materialize](https://materializecss.com/) version 1.0.0 has been used a modern responsive front-end framework.
+
+* [jQuery](https://jquery.com/) has been used to initialize Materialize functionality.
+* [JavaScript](https://www.javascript.com/) has been used to be able to add the functionality for email service in contact page.
 
 ## **_Bugs_**
 
 * When adding the modal from Materialize I had a problem when deleting the recipe. The recipe deleted wasn't the one intended. I then discover that the modal needs a unique ID. By applying the `recipe._Id` to the id required by the modal, the recipe that gets deleted is now the correct one.
 
-* When looking at the main page with all the recipes displayed, the second column doesn't have a recipe.  Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/bug_display_index_html.jpg) to view a screenshot of the recipes collection. When I have added pagination to the index.html page this issue has been solved.
+* While testing emialjs even though the code was correct and the cache was cleared the functionality wasn't working. After a few hours worked. I do believe I had a problem with cache not clearing properly.
