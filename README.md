@@ -151,6 +151,7 @@ Also I would like to have the functionality to confirm registration via email, r
 is a style sheet language. It is used to style markup language such as HTML.
 
 * [Gitpod](https://gitpod.io/) has been used as an on-line IDE followed by [Heroku](https://www.heroku.com/) for deployment. IDE is a software application used by computer programmers for software development.
+* [Github](https://github.com/) has been used to store the code.
 
 * [Googlefonts](https://fonts.google.com/) has been used to style the fonts of the writing on the web site.
 
@@ -158,9 +159,22 @@ is a style sheet language. It is used to style markup language such as HTML.
 
 * [jQuery](https://jquery.com/) has been used to initialize Materialize functionality.
 * [JavaScript](https://www.javascript.com/) has been used to be able to add the functionality for email service in contact page.
+* [EmailJS](https://www.emailjs.com/) Has been used to be able to receive an email from the User to the developer with a request/message by filling the form in  the contact page. 
+* [Python3](https://www.python.org/) is the programming language used mainly in this project.
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) is a microframework used in conjunction with Python3.
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) is a modern and designer-friendly templating language for Python3.
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) Werkzeug is a comprehensive WSGI web application library.
+* [Mongo DB Atlas](https://account.mongodb.com/) is a NoSQL database used to store data.
+* [Pymongo](https://pypi.org/project/pymongo/) is ised to be able to interact with [Mongo DB Atlas](https://account.mongodb.com/) database.
+* [Heroku](https://www.heroku.com/) is used to deploy and host the project.
 
-## **_Bugs_**
+## **_Testing_**
+
+For the testing section please refer to [TESTING.md](TESTING.md) file.
+
+## **_Bugs and fixes_**
 
 * When adding the modal from Materialize I had a problem when deleting the recipe. The recipe deleted wasn't the one intended. I then discover that the modal needs a unique ID. By applying the `recipe._Id` to the id required by the modal, the recipe that gets deleted is now the correct one.
 
 * While testing emialjs even though the code was correct and the cache was cleared the functionality wasn't working. After a few hours worked. I do believe I had a problem with cache not clearing properly.
+
