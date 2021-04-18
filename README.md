@@ -226,18 +226,28 @@ Please make sure to add `sudo` if you are not using GitPod
 ### **_Heroku deployment_**
 
 1. Create a requirement.txt file that is need to Heroku to confirm dependences. In your terminal please type:  
-`pip3 freeze > requirements.txt`
-
-
+`pip3 freeze --local > requirements.txt`
 2. Create a Procfile to confirm to heroku apps the commands that are executed by the app.  
 `echo web: python run.py > Procfile`
 3. Add, commit and push these files to GitHub.
-4. In Heroku create a new app.
+4. In Heroku create a new app. The name has to be unique.
 5. In Heroku you need to link Github to Heroku via the dashboard link "Deploy".  
  Go to "Deployment method" and choose "GitHub".  
- Then enable "Automatic deploys".
+ Below Deployment method find you repository name listed and select it.  
+ 6. Still in Heroku go to "Settings" and click "Reveal Config Vars"
+ 7. In this section you need to feel in the inputs field with the variables written in the env.py file.  
+    - **IP** : 0.0.0.0
+    - **PORT** : 5000
+    - **MONGO_URI** : `<link to your MongoDB database>`
+    - **SECRET_KEY** : `<your secret key>`
+    - **MONGO_DBNAME** :`<your collection name>`
+    - **DEBUG**: **FALSE**    
+8. Then enable "Automatic deploys".
+9. In "Manual Deployment" click "Deploy Branch".
+10. You should get the message "Your app is succesfully deployed".
+11. Click "View" to lunch the app.
+ 
 
- TO BE FINISH
 
 
 
