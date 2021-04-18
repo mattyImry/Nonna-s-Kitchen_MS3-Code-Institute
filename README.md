@@ -108,7 +108,7 @@ The wireframe for the  single page is not the same as the finished page because 
 * As a User logged in I want to be able to log out.
 * As a User logged in I want to be able to contact the developer by usign the contact page form.
 * As the Developer I want to be able to view all Users recipes.
-* As the Admin I want to be able to delete recipes and accounts.
+* As the Admin I want to be able to delete recipes.
 
 ## **_Features_**
 
@@ -157,7 +157,7 @@ is a style sheet language. It is used to style markup language such as HTML.
 
 * [Materialize](https://materializecss.com/) version 1.0.0 has been used a modern responsive front-end framework.
 
-* [jQuery](https://jquery.com/) has been used to initialize Materialize functionality.
+* [jQuery](https://jquery.com/) has been used to initialize Materialize functionality and to add current year to footer.
 * [JavaScript](https://www.javascript.com/) has been used to be able to add the functionality for email service in contact page.
 * [EmailJS](https://www.emailjs.com/) Has been used to be able to receive an email from the User to the developer with a request/message by filling the form in  the contact page. 
 * [Python3](https://www.python.org/) is the programming language used mainly in this project.
@@ -165,7 +165,7 @@ is a style sheet language. It is used to style markup language such as HTML.
 * [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) is a modern and designer-friendly templating language for Python3.
 * [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) Werkzeug is a comprehensive WSGI web application library.
 * [Mongo DB Atlas](https://account.mongodb.com/) is a NoSQL database used to store data.
-* [Pymongo](https://pypi.org/project/pymongo/) is ised to be able to interact with [Mongo DB Atlas](https://account.mongodb.com/) database.
+* [Pymongo](https://pypi.org/project/pymongo/) is used to be able to interact with [Mongo DB Atlas](https://account.mongodb.com/) database.
 * [Heroku](https://www.heroku.com/) is used to deploy and host the project.
 
 ## **_Testing_**
@@ -183,7 +183,7 @@ For the testing section please refer to [TESTING.md](TESTING.md) file.
 ### **_Local deployment_**
 1. To clone this repository you can do it directly into your IDE by copying the following to your terminal:  
   `git clone https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute `  
-Or you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
+Or you can save a copy of this repository by clicking "Clone or download", then "Download Zip" button, and after extract the Zip file to your folder.
 2. In the terminal window change directory (CD) to the correct file location (directory that you have created for your repository).
 3. Set environment variables:
 * Create `env.py` in the root directory
@@ -248,11 +248,27 @@ Please make sure to add `sudo` if you are not using GitPod
 11. Click "View" to lunch the app.
  
 
-
-
-
-
-
-
-
 ## **_Credits_**
+
+The recipes written by user "Matty", the developer, are taken from [Giallo Zafferano](https://www.giallozafferano.com/)  
+
+The picture for the recipe "Stuffed Egg plant" is taken from [Freepik](https://www.freepik.com/free-photo/turkish-stuffed-eggplants-with-ground-beef-vegetables-baked-with-tomato-sauce_6933486.htm#page=1&query=stuffed%20eggplant&position=1) User Timolina  
+
+The picture for the recipe "Spaghetti Carbonara" is taken from [Freepik](https://www.freepik.com/premium-photo/pasta-carbonara-with-bacon-parmesan_4255033.htm#page=1&query=carbonara&position=35) User Yuliyafurman 
+
+The picture for the recipe "Cotechino" is taken from [Italian Tradition](https://www.italian-traditions.com/cotechino-with-lentils-typical-new-years-eve-dish/) User "Melania R." 
+
+Logo for favicom created with https://www.freelogodesign.org/   
+
+Code for Footer at bottom of page [link](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b) 
+
+Flask documentation has been used extesively.   
+
+Flask documentation for Error Handling.
+I have also consulted this page for further information into Flask [link](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+
+The code for using the video as a beckground is taken from Udemy course "Advanced css and sass" and the video file is taken from [link](https://coverr.co/videos/slices-of-pizza-GaN4FTL01N).
+
+The code for zooming the images of recipes is taken from [link](https://w3bits.com/css-image-hover-zoom/)
+
+
