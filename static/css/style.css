@@ -47,13 +47,13 @@ body::after {
     font-weight: 600;
     margin-top: 65px;
     margin-bottom: 0;
-
 }
 
 /* FOOTER */
 
 .copyright {
     margin-top: 5px;
+    color: #fafafa;
 }
 
 .row-footer{
@@ -99,8 +99,7 @@ body::after {
 }
 
 .list-card {
-    padding-bottom: 5px;
-    
+    padding-bottom: 5px;  
 }
 
 .recipe-number {

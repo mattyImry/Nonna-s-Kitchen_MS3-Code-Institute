@@ -266,6 +266,8 @@ Logo for favicom created with https://www.freelogodesign.org/
 
 Code for Footer at bottom of page [link](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b) 
 
+Idea for current year on footer [link](https://forum.jquery.com/topic/get-current-year)
+
 Flask documentation has been used extesively.   
 
 Flask documentation for Error Handling.

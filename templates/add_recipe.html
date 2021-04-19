@@ -1,126 +1,127 @@
 {% extends "base.html" %}
 {% block content %}
+    <section>
+        <h3 class="center-align title-add_recipe brown-text darken-4">Add Recipe</h3>
 
-    <h3 class="center-align title-add_recipe brown-text darken-4">Add Recipe</h3>
-
-    <!--ADD RECIPE SECTION--> 
-    <section class="row card-add-recipe card-panel grey lighten-4">
-        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input  id="recipe_name" name="recipe_name" type="text" 
-                        minlength="5" maxlength="40" class="validate brown-text" required>
-                    <label for="recipe_name">Recipe name</label>
+        <!--ADD RECIPE SECTION--> 
+        <div class="row card-add-recipe card-panel grey lighten-4">
+            <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  id="recipe_name" name="recipe_name" type="text" 
+                            minlength="5" maxlength="40" class="validate brown-text" required>
+                        <label for="recipe_name">Recipe name</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row ">
+                <div class="row ">
 
-                <!--ADD TYPE OF MEAL--> 
-                <div class="input-field col s6">
-                    <select id="type" name="type" class="validate" required>
-                        <option value="" disabled selected>Course</option>
-                        <option value="First Course">First Course</option>
-                        <option value="Main Course">Main Course</option>
-                        <option value="Dessert">Dessert</option>
-                        
-                    </select>
-                </div>
+                    <!--ADD TYPE OF MEAL--> 
+                    <div class="input-field col s6">
+                        <select id="type" name="type" class="validate" required>
+                            <option value="" disabled selected>Course</option>
+                            <option value="First Course">First Course</option>
+                            <option value="Main Course">Main Course</option>
+                            <option value="Dessert">Dessert</option>
+                            
+                        </select>
+                    </div>
 
-                <!--ADD SERVING-->
-                <div class="input-field col s6">
-                    <select id="serving" name="serving" class="validate" required>
-                        <option value="" disabled selected >Serving</option>
-                        <option value="2 People">2 People</option>
-                        <option value="4 People">4 People</option>
-                        <option value="6 People">6 People</option>
-                        <option value="8 People">8 People</option>
-                    </select>       
-                </div>
+                    <!--ADD SERVING-->
+                    <div class="input-field col s6">
+                        <select id="serving" name="serving" class="validate" required>
+                            <option value="" disabled selected >Serving</option>
+                            <option value="2 People">2 People</option>
+                            <option value="4 People">4 People</option>
+                            <option value="6 People">6 People</option>
+                            <option value="8 People">8 People</option>
+                        </select>       
+                    </div>
 
-                
-            </div>
-            <div class="row ">
-
-                <!--ADD DIFFICULTY -->
-                <div class="input-field col s6">
-                    <select id="difficulty" name="difficulty" class="validate" required>
-                        <option value="" disabled selected >Difficulty</option>
-                        <option value="Easy">Easy</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Hard">Hard</option>   
-                    </select>
-                </div>
-
-                <!--ADD VEGETERIAN VALUE--> 
-                <div class="input-field col s6">
-                    <select id="is_vegetarian" name="is_vegetarian" class="validate" required>
-                        <option value="" disabled selected>Vegetarian</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>    
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-                
-                <!--ADD COOKING TIME-->
-                <div class="input-field col s6">
-                    <input id="cook_time" name="cook_time" type="text" class="validate brown-text" required>
-                    <label for="cook_time">Cooking time</label>
-                </div>
-
-                <!--ADD PREPARATION TIME--> 
-                <div class="input-field col s6">
-                    <input id="prep_time" name="prep_time"  type="text" class="validate brown-text" required>
-                    <label for="prep_time">Preparation Time</label>
-                </div>   
-            </div>
-
-            <!--ADD INGREDIENTS-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="ingredients" name="ingredients" class="materialize-textarea validate brown-text" required></textarea>
-                    <label for="ingredients">Ingredients</label>
-                    <p><small>Please separate ingredients with a comma</small></p>
-                </div>
-            </div>
-
-            <!--ADD PREPARATION STEPS-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="preparation" name="preparation" class="materialize-textarea validate brown-text" required></textarea>
-                    <label for="preparation">Preparation</label>
-                    <p><small>Please separate sentences with a full stop</small></p>
-                </div>
-            </div>
-
-            <!--ADD IMAGE-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="image" name="image" class="materialize-textarea validate brown-text"
-                        minlength="5" maxlength="300" required></textarea>
-                    <label for="image">Please Insert picture's URL</label>
-                    <p><small>Please only supply URL ending with .jpg, .jpeg, or .png</small></p>
-                </div>
-            </div>
-
-            <!--SUBMIT NEW CREATED RECIPE-->
-            <div class="row center-align">
-                <div class="col s6 center-align">
-
-                    <!--SUBMIT BUTTON-->
-                    <button type="submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit ">
-                        Add Recipe <i class="fas fa-plus-square"></i>
-                    </button>
-                </div>
-                <div class="col s6 center-align">
                     
-                    <!--CANCEL BUTTON-->
-                    <a href="{{ url_for('index') }}" class="btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
-                        Cancel <i class="fas fa-window-close"></i></a>  
                 </div>
-            </div>
-        </form>
+                <div class="row ">
+
+                    <!--ADD DIFFICULTY -->
+                    <div class="input-field col s6">
+                        <select id="difficulty" name="difficulty" class="validate" required>
+                            <option value="" disabled selected >Difficulty</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>   
+                        </select>
+                    </div>
+
+                    <!--ADD VEGETERIAN VALUE--> 
+                    <div class="input-field col s6">
+                        <select id="is_vegetarian" name="is_vegetarian" class="validate" required>
+                            <option value="" disabled selected>Vegetarian</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>    
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <!--ADD COOKING TIME-->
+                    <div class="input-field col s6">
+                        <input id="cook_time" name="cook_time" type="text" class="validate brown-text" required>
+                        <label for="cook_time">Cooking time</label>
+                    </div>
+
+                    <!--ADD PREPARATION TIME--> 
+                    <div class="input-field col s6">
+                        <input id="prep_time" name="prep_time"  type="text" class="validate brown-text" required>
+                        <label for="prep_time">Preparation Time</label>
+                    </div>   
+                </div>
+
+                <!--ADD INGREDIENTS-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="ingredients" name="ingredients" class="materialize-textarea validate brown-text" required></textarea>
+                        <label for="ingredients">Ingredients</label>
+                        <p><small>Please separate ingredients with a comma</small></p>
+                    </div>
+                </div>
+
+                <!--ADD PREPARATION STEPS-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="preparation" name="preparation" class="materialize-textarea validate brown-text" required></textarea>
+                        <label for="preparation">Preparation</label>
+                        <p><small>Please separate sentences with a full stop</small></p>
+                    </div>
+                </div>
+
+                <!--ADD IMAGE-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="image" name="image" class="materialize-textarea validate brown-text"
+                            minlength="5" maxlength="300" required></textarea>
+                        <label for="image">Please Insert picture's URL</label>
+                        <p><small>Please only supply URL ending with .jpg, .jpeg, or .png</small></p>
+                    </div>
+                </div>
+
+                <!--SUBMIT NEW CREATED RECIPE-->
+                <div class="row center-align">
+                    <div class="col s6 center-align">
+
+                        <!--SUBMIT BUTTON-->
+                        <button type="submit" class=" btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit ">
+                            Add Recipe <i class="fas fa-plus-square"></i>
+                        </button>
+                    </div>
+                    <div class="col s6 center-align">
+                        
+                        <!--CANCEL BUTTON-->
+                        <a href="{{ url_for('index') }}" class="btn-large brown lighten-2 text-shadow waves-effect waves-light btn-submit">
+                            Cancel <i class="fas fa-window-close"></i></a>  
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
         
 {% endblock %}
