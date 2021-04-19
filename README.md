@@ -1,7 +1,11 @@
+Python and Data Centric Development Milestone Project 3 - Code Institute
+
+![Screenshotproject](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/6df508095c32328290a011f4f88c9d880dfe6dde/media/ms3_screenshot.jpg)
+
 # **_Nonna's Kitchen_**
 
 This project is my third Milestone Project for the [Code Institute](https://codeinstitute.net/) Full Stack Software Developer Diploma. This project is created to demonstate my ability to design and implement back-end functionality with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/). Data is stored in [MongoDB](https://www.mongodb.com/) a document-base database. I will be following the CRUD principles Create, Read, Update and Delete. With this priciples I can allow the User to store and manipulate his recipes in the database.
-The deployed application can be accessed [here](https://nonna-kitchen-ms3.herokuapp.com/) . 
+The deployed application can be accessed [here](https://nonna-kitchen-ms3.herokuapp.com/). 
 
 ## **_UX_**  
 ### **_Strategy / Site Owner story_**
@@ -153,8 +157,8 @@ is a style sheet language. It is used to style markup language such as HTML.
 * [Gitpod](https://gitpod.io/) has been used as an on-line IDE followed by [Heroku](https://www.heroku.com/) for deployment. IDE is a software application used by computer programmers for software development.
 * [Github](https://github.com/) has been used to store the code.
 
-* [Googlefonts](https://fonts.google.com/) has been used to style the fonts of the writing on the web site.
-
+* [Googlefonts](https://fonts.google.com/) has been used to style the fonts of the writing on the web site.  
+* [Fontawesome](https://fontawesome.com/) has been used for the icons used in the forms and footer.
 * [Materialize](https://materializecss.com/) version 1.0.0 has been used a modern responsive front-end framework.
 
 * [jQuery](https://jquery.com/) has been used to initialize Materialize functionality and to add current year to footer.
@@ -267,8 +271,8 @@ Flask documentation has been used extesively.
 Flask documentation for Error Handling.
 I have also consulted this page for further information into Flask [link](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 
-The code for using the video as a beckground is taken from Udemy course "Advanced css and sass" and the video file is taken from [link](https://coverr.co/videos/slices-of-pizza-GaN4FTL01N).
+The code for using the video as a background is taken from Udemy course "Advanced css and sass" and the video file is taken from [link](https://coverr.co/videos/slices-of-pizza-GaN4FTL01N).
 
 The code for zooming the images of recipes is taken from [link](https://w3bits.com/css-image-hover-zoom/)
 
-
+A special thanks goes to the tutoring team and to my mentor for the support given during the project.
