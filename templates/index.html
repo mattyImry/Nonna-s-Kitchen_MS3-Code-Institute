@@ -3,8 +3,6 @@
 
     <h1 class="center-align brown-text darken-4 main-title">Welcome to Nonna's Kitchen</h1>
 
-        
-
     <!--RECIPES CONTAINER-->
     <div class="container "> 
 
@@ -12,16 +10,15 @@
         <div class="row center-align ">
             <form action="{{ url_for('search') }}" method="POST" class="col s12">
                 <div class=" input-field col s12 search-single">
-                    <input id="query" type="text" name="query" class=" validate" required>                
+                    <input type="text" name="query" class=" validate" required>                
                     <label for="query">
-                        <button class="waves-effect btn-flat" aria-label="search" type="submit">
+                        <button class="waves-effect btn-flat" aria-label="search" type="submit" id="query">
                         <i class="fas fa-search fa-2x icon" ></i></button>Search Recipes
                     </label>
                 </div>
             </form>
         </div>   
 
-        
         <div class="row ">     
         {% if recipes_per_page > 0 %}
             {% for recipe in recipes %}
