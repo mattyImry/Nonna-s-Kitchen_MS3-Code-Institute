@@ -70,7 +70,7 @@ If Admin is not logged in clicking the recipe's card | Single page recipe will o
 If Admin is logged in | Admin can see recipes with buttons | Yes
 If Admin is logged in clicking the recipe's card | Single page recipe will open | Yes
 If Admin is logged in can delete recipe | Clicking the button delete confirmation via modal to delete | Yes
-If Admin is logged in can edit recipe | Clicking the button edit | Yes
+If Admin is logged in can edit recipe | Clicking the button edit open edit recipe page| Yes
 
 #### **_Single recipe page_**
 
@@ -107,7 +107,7 @@ User filling the log in form "Username" section correctly | Message "right" appe
 User filling the log in form "Password" section correctly | Message "right" appear | Yes
 User clicking log in buttons after filling form correctly | Message confirmation appear/ redirecting to "my profile" page |Yes
 
-#### **_Log out link_**
+#### **_Log Out link_**
 
 action taken | expected result | functional 
 ------------ | --------------- | ----------
@@ -115,14 +115,57 @@ If User logged in click "Log out" link | Confirmation log out modal message appe
 If User logged in click "Cancel" button in modal message | User redirected to "My profile" page | Yes
 If User logged in click "Agree" button in modal message | User redirected to "Index" page | Yes
 
-#### **_My profile page_**
+#### **_My Profile page_**
 
 action taken | expected result | functional 
 ------------ | --------------- | ----------
-User at "my profile" page | Can view its Username and number of recipes | Yes
-User at "my profile" page | Can view its recipes as cards with "Edit" and "Delete" buttons | Yes
+User logged in at "my profile" page | Can view its Username and number of recipes created | Yes
+User logged in at "my profile" page | Can view its recipes as cards with "Edit" and "Delete" buttons | Yes
 User clicking the recipe's card | Single page recipe will open | Yes
-User can delete recipe from card view| Clicking the button delete confirmation via modal to delete | Yes
-User Cancel deletion of recipe from card view | By clicking "Cancel" button in modal message 
+User can delete recipe from card view| Clicking the button "Delete", confirmation via modal to delete | Yes
 User can edit recipe | Clicking the "Edit" button edit page opens | Yes
+User can delete its own account | Clicking the button "Delete account", confirmation via modal to delete | Yes
 
+
+#### **_Add recipe page_**
+
+action taken | expected result | functional 
+------------ | --------------- | ----------
+User logged in at "add recipe" page, by filling the form in full and click "Add Recipe" button | Recipe added to account user | Yes
+User not filling the input field "Recipe name" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Course" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Serving" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Difficulty" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Vegetarian" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Cooking time" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Preparation time" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Ingredients" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Preparation" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Please Insert picture's URL" | Message "Please fill in this field" appear in input field | Yes
+User clicking "Cancel" button | User redirected to "Index" page | Yes
+
+
+#### **_Edit recipe page_**
+
+action taken | expected result | functional 
+------------ | --------------- | ----------
+User clicking "Edit" button on recipe card  | User redirected to "Edit recipe" page | Yes
+User clicking "Edit" button on "Single recipe" page  | User redirected to "Edit recipe" page | Yes
+User by filling the form in full and click "Submit" button | Recipe edited added to account user | Yes
+User not filling the input field "Recipe name" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Course" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Serving" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Difficulty" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Vegetarian" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Cooking time" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Preparation time" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Ingredients" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Preparation" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Please Insert picture's URL" | Message "Please fill in this field" appear in input field | Yes
+User clicking "Cancel" button | User redirected to "Index" page | Yes
+
+#### **_Contatc us page_**
+
+User by filling the form in full and click "Send" button | Modal message "Thank you! Your message was sent"  | Yes
+User by filling the form in full and click "Send" button | Confirmation email for message sent to User via email  | Yes
+User by filling the form in full and click "Send" button | Confirmation email to Developer received  | Yes

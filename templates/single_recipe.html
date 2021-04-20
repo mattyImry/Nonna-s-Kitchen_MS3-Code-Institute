@@ -37,7 +37,7 @@
                 <div class="col s12 m7">
                     <h4 class="title-add_recipe brown-text darken-4">Preparation</h4>
                     {% for prep in recipe.preparation %}
-                        <p>{{- prep -}}</p>
+                        <p>{{- prep -}}.</p>
                     {% endfor %}
                 </div>
                 
@@ -45,7 +45,7 @@
                     <div class="divider divider-2"></div>
                     <h4 class="center-align title-add_recipe brown-text darken-4">Ingredients</h4>
                     {% for ingredient in recipe.ingredients %}
-                        <p>{{- ingredient -}} </p>
+                        <p>{{- ingredient -}}, </p>
                     {% endfor %}
                 </div>
             </div>
