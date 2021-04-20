@@ -1,5 +1,26 @@
 ## **_Testing_**
 
+
+### **_Browser compatibility_**
+  
+The project ahd been tested in the following browsers without any compatibility issue:  
+* Google Chrome    
+* Microsoft Edge  
+* Firefox  
+* Opera  
+
+The project has also been tested on different screen sizes. 15" and 14" inch laptop, 24" screen and 20" screen.
+
+### **_Responsiveness_**
+
+As already specified in the "Surface" part in README file, the project has been developed with mobile first approach.
+
+The project has been tested in mobile view in the following devices without any compatibility issue: 
+
+* Motorola G5, G8 and G9
+* Iphone 6
+* Ipad 2
+
 ### **_Automated testing_**
 
 * HTML pages tested with [W3C HTML Validator](https://validator.w3.org). I Had warning on regards sections that needed heading. Due to the fact that the heading was outside the section for layout reasons. Modified the position of the section nwarning removed.
@@ -192,3 +213,14 @@ user story | action taken | expected result | functional
 11 | As a User logged in by filling the form contact us in full and click "Send" button | Modal message "Thank you! Your message was sent"  | Yes
 12 | As a Developer I can view all User recipe | By logging in or not via "index" page | Yes
 13 | As the Admin can delete recpes | Via "Delete" button in recipes cards | Yes
+
+
+#### **_Database_**
+action taken | expected result | functional 
+------------ | --------------- | ----------
+Deleting recipe via Admin log in | Only Recipe deleted from recipe collection User author of recipe not deleted | Yes
+Deleting recipe via User log in | Only Recipe deleted from recipe collection User author of recipe not deleted | Yes
+Deleting account via User log in | Only account deleted from user collection recipes not deleted | Yes
+Add recipe via User or Admin | Recipe added recipe collection correctly | Yes
+Register account | User added to User collection | Yes
+

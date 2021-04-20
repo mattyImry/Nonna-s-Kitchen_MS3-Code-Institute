@@ -1,6 +1,6 @@
 Python and Data Centric Development Milestone Project 3 - Code Institute
 
-![Screenshotproject](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/6df508095c32328290a011f4f88c9d880dfe6dde/media/ms3_screenshot.jpg)
+![Screenshotproject](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/984242f8679d6968aee4ba64009a9ba35c0230c1/media/ms3_screenshot.png)
 
 # **_Nonna's Kitchen_**
 
@@ -77,7 +77,7 @@ Features that I want to implement are:
 
 ### **_Surface_**
 
-The website uses [Materialize](https://materializecss.com/) as a framework. I have decided to use it because of the classic design that many users today are expecting from any website. 
+The website uses [Materialize](https://materializecss.com/) as a framework. I have decided to use it because of the classic design that many users today are expecting from any website and I will be able to achive mobile first design.
 The pages will looks like they are compose by cards. 
 The color scheme is very minimal with these colors used:  
 * #3e2723 is used for title's texts and borders for buttons and cards.
