@@ -221,7 +221,7 @@ action taken | expected result | functional
 ------------ | --------------- | ----------
 Deleting recipe via Admin logged in | Only Recipe deleted from recipe collection. User author of recipe not deleted | Yes
 Deleting recipe via User logged in | Only Recipe deleted from recipe collection. User author of recipe not deleted | Yes
-Deleting account via User log in | Only account deleted from user collection recipes not deleted | Yes
+Deleting account via User logged in | Account deleted from user collection. All recipes created by Users also deleted | Yes
 Add recipe via User or Admin | Recipe added to recipe collection correctly | Yes
 Register account | User added to User collection | Yes
 

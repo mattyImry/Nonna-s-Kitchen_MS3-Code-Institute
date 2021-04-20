@@ -184,6 +184,8 @@ For the testing section please refer to [TESTING.md](TESTING.md) file.
 
 * When opening the "Edit" page the layout in the Edit form comes back with spaces and sentences not align. But when submitted and viewing the recipe in full the layout of the recipe is correct. I do think it may be how Flask reopen the form. I will try to fix when I have more time.
 
+* In the main page when logged in the recipe cards leave spaces empty. This is due to the buttons appering when logged in causing the card to be longer. I will try to have a fixed size card when I will have more time. When noone is logged in the cards are the layed out the expected way.
+
 ## **_Deployment_**
 
 ### **_Local deployment_**
@@ -263,6 +265,8 @@ The picture for the recipe "Stuffed Egg plant" is taken from [Freepik](https://w
 The picture for the recipe "Spaghetti Carbonara" is taken from [Freepik](https://www.freepik.com/premium-photo/pasta-carbonara-with-bacon-parmesan_4255033.htm#page=1&query=carbonara&position=35) User Yuliyafurman 
 
 The picture for the recipe "Cotechino" is taken from [Italian Tradition](https://www.italian-traditions.com/cotechino-with-lentils-typical-new-years-eve-dish/) User "Melania R." 
+
+The picture for the recipe "Piadina" is taken from  [Giallo Zafferano](https://www.giallozafferano.com/recipes/piadina-romagnola-romagna-style-flat-bread.html)
 
 Logo for favicom created with https://www.freelogodesign.org/   
 
