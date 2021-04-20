@@ -100,19 +100,19 @@ The wireframe for the  single page is not the same as the finished page because 
 
 ## **_User Story_**
 
-* As a User not registered I want to be able to Register my account.
-* As a User not registered I want to be able to view all recipes created in the website.
-* As a User not registered I want to be able to contact the developer by usign the contact page form.
-* As a User registered I want to be able to log in to the website.
-* As a User logged in I want to be able to add recipes.
-* As a User logged in I want to be able to view my recipe and other users' recipes.
-* As a User logged in I want to be able to edit my recipe.
-* As a User logged in I want to be able to delete my recipe.
-* As a User logged in I want to be able to delete my account.
-* As a User logged in I want to be able to log out.
-* As a User logged in I want to be able to contact the developer by usign the contact page form.
-* As the Developer I want to be able to view all Users recipes.
-* As the Admin I want to be able to delete recipes.
+1. As a User not registered I want to be able to Register my account.
+2. As a User not registered I want to be able to view all recipes created in the website.
+3. As a User not registered I want to be able to contact the developer by usign the contact page form.
+4. As a User registered I want to be able to log in to the website.
+5. As a User logged in I want to be able to add recipes.
+6. As a User logged in I want to be able to view my recipe and other users' recipes.
+7. As a User logged in I want to be able to edit my recipe.
+8. As a User logged in I want to be able to delete my recipe.
+9. As a User logged in I want to be able to delete my account.
+10. As a User logged in I want to be able to log out.
+11. As a User logged in I want to be able to contact the developer by usign the contact page form.
+12. As the Developer I want to be able to view all Users recipes.
+13. As the Admin I want to be able to delete recipes.
 
 ## **_Features_**
 
@@ -181,6 +181,8 @@ For the testing section please refer to [TESTING.md](TESTING.md) file.
 * When adding the modal from Materialize I had a problem when deleting the recipe. The recipe deleted wasn't the one intended. I then discover that the modal needs a unique ID. By applying the `recipe._Id` to the id required by the modal, the recipe that gets deleted is now the correct one.
 
 * While testing emialjs even though the code was correct and the cache was cleared the functionality wasn't working. After a few hours worked. I do believe I had a problem with cache not clearing properly.
+
+* When opening the "Edit" page the layout in the Edit form comes back with spaces and sentences not align. But when submitted and viewing the recipe in full the layout of the recipe is correct. I do think it may be how Flask reopen the form. I will try to fix when I have more time.
 
 ## **_Deployment_**
 

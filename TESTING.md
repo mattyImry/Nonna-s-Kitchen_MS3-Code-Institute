@@ -164,8 +164,31 @@ User not filling the input field "Preparation" | Message "Please fill in this fi
 User not filling the input field "Please Insert picture's URL" | Message "Please fill in this field" appear in input field | Yes
 User clicking "Cancel" button | User redirected to "Index" page | Yes
 
-#### **_Contatc us page_**
-
+#### **_Contact us page_**
+action taken | expected result | functional 
+------------ | --------------- | ----------
 User by filling the form in full and click "Send" button | Modal message "Thank you! Your message was sent"  | Yes
 User by filling the form in full and click "Send" button | Confirmation email for message sent to User via email  | Yes
 User by filling the form in full and click "Send" button | Confirmation email to Developer received  | Yes
+User not filling the input field "Name" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "E-mail address" | Message "Please fill in this field" appear in input field | Yes
+User not filling the input field "Your message" | Message "Please fill in this field" appear in input field | Yes
+
+
+#### **_User story_**
+user story | action taken | expected result | functional 
+-----------|------------ | --------------- | ----------
+1 | As a User not register clicking "Register" link in navbar | Register page will open |Yes
+2 | As a User not register | User can see recipes via "index" page | Yes
+2 | As a User not register clicking the recipe's card | "Single recipe" page will open | Yes
+3 | As a User not register by filling in full and correctly the contact form | User can contact Developer | Yes
+4 | As a User registered, by filling in full and correctly the log in form | User logged in |Yes
+5| As a User logged in can add recipe, by filling the form in full and click "Add Recipe" button | Recipe added to account user | Yes
+6 | As a User logged in | User can see all recipes | Yes
+7 | As a User logged in filling the form edit recipe in full and click "Submit" button | Recipe edited added to account user | Yes
+8 | As a User logged in can delete recipe from card view| Clicking the button "Delete", confirmation via modal to delete | Yes
+9 | As a User logged in can delete its own account | Clicking the button "Delete account", confirmation via modal to delete | Yes
+10 | As a User logged in click "Log out" link | Confirmation log out modal message appear | Yes
+11 | As a User logged in by filling the form contact us in full and click "Send" button | Modal message "Thank you! Your message was sent"  | Yes
+12 | As a Developer I can view all User recipe | By logging in or not via "index" page | Yes
+13 | As the Admin can delete recpes | Via "Delete" button in recipes cards | Yes
