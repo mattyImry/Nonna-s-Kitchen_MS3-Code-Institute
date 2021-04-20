@@ -232,7 +232,7 @@ def logout():
     """
     Log out the user from session
     redirect the user to
-    landing page
+    index page
     """
 
     flash("You are now logged out")
