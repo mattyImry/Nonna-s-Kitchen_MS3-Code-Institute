@@ -34,7 +34,7 @@ Features that I want to implement are:
 *  Ability for the Users and developer register an account.
 *  Ability for the Users and developer to search recipes.
 *  Ability for the Users to contact the Developer with EmailJs functionality.
-*  Ability for the Admin to delete recipes and accounts.
+*  Ability for the Admin to delete recipes.
 *  Easy design and navigation.
 *  Mobile first design.
 
@@ -110,7 +110,7 @@ The wireframe for the  single page is not the same as the finished page because 
 8. As a User logged in I want to be able to delete my recipe.
 9. As a User logged in I want to be able to delete my account.
 10. As a User logged in I want to be able to log out.
-11. As a User logged in I want to be able to contact the developer by usign the contact page form.
+11. As a User logged in I want to be able to contact the developer by using the contact page form.
 12. As the Developer I want to be able to view all Users recipes.
 13. As the Admin I want to be able to delete recipes.
 
@@ -126,7 +126,7 @@ If the user is not logged in the links visible will be:
 On the mobile view the navbar will be showing the logo on the left hand side but the links will be hold in a burger menu rapresented by an arrow pointing down.
 
 * The website is visible in all screen sizes.
-* The footer will only hold the contact page link via a letter icon and two icons redirect the Users to the developer LinkedIn acoount and GitHub account.
+* The footer will only hold the contact page link via a letter icon and two icons redirect the Users to the developer LinkedIn account and GitHub account.
 * The unregistered Users can register an account via the "Register" page.
 * The register User can log in via the log in link in the navbar.
 * The User can log out via the log out link in the navbar.
@@ -134,7 +134,7 @@ On the mobile view the navbar will be showing the logo on the left hand side but
 * Any visitor to the website can search recipes via the search functionality in the "Index" page.
 * The logged in User can add his own recipe via the "Add recipe" page. 
 * The logged in User will be able to edit and delete his own recipes from "My profile" page and "Index" page.
-* The logged in User will be able to edit and delete his own recipes from "Index" page only if lodded in.
+* The logged in User will be able to edit and delete his own recipes from "Index" page only if logged in.
 * The logged in User will be able to edit his own recipes when recipe view via "Single recipe" page.
 * The logged in User will be able to delete his own account from "My profile" page.
 * All the information for the recipes and users will be stored by using [MongoDB](https://www.mongodb.com/). The informations will be retrieve and send with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/).
@@ -154,7 +154,7 @@ Also I would like to have the functionality to confirm registration via email, r
 * [CSS](https://en.wikipedia.org/wiki/CSS)
 is a style sheet language. It is used to style markup language such as HTML.
 
-* [Gitpod](https://gitpod.io/) has been used as an on-line IDE followed by [Heroku](https://www.heroku.com/) for deployment. IDE is a software application used by computer programmers for software development.
+* [Gitpod](https://gitpod.io) has been used as an on-line IDE followed by [Heroku](https://www.heroku.com/) for deployment. IDE is a software application used by computer programmers for software development.
 * [Github](https://github.com/) has been used to store the code.
 
 * [Googlefonts](https://fonts.google.com/) has been used to style the fonts of the writing on the web site.  
@@ -195,7 +195,7 @@ Or you can save a copy of this repository by clicking "Clone or download", then 
 * Create `env.py` in the root directory
 * In the `env.py` file at the top write `import os`
 * In the `env.py` set up the connection to your MongoDB database and a "SECRET KEY":  
-`os.environ.setdefault("MONGO_URI", "mongodb+srv:(your logins and password")`
+`os.environ.setdefault("MONGO_URI", "mongodb+srv":("your username and password")`
 `os.environ.setdefault["SECRET_KEY"] = "YourSecretKey"`
 4. From the file requirements.txt install the requirements. In your terminal type:  
 `pip3 install -r requirements.txt`  
@@ -241,7 +241,7 @@ Please make sure to add `sudo` if you are not using GitPod
  Go to "Deployment method" and choose "GitHub".  
  Below Deployment method find you repository name listed and select it.  
  6. Still in Heroku go to "Settings" and click "Reveal Config Vars"
- 7. In this section you need to feel in the inputs field with the variables written in the env.py file.  
+ 7. In this section you need to fill in the inputs field with the variables written in the env.py file.  
     - **IP** : 0.0.0.0
     - **PORT** : 5000
     - **MONGO_URI** : `<link to your MongoDB database>`

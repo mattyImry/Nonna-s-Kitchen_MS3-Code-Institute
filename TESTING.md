@@ -23,7 +23,7 @@ The project has been tested in mobile view in the following devices without any 
 
 ### **_Automated testing_**
 
-* HTML pages tested with [W3C HTML Validator](https://validator.w3.org). I Had warning on regards sections that needed heading. Due to the fact that the heading was outside the section for layout reasons. Modified the position of the section nwarning removed.
+* HTML pages tested with [W3C HTML Validator](https://validator.w3.org). I had warning on regards sections that needed heading. Due to the fact that the heading was outside the section for layout reasons. Modified the position of the section warning removed.
 
 * CSS file has been tested with [W3C CSS validator](https://jigsaw.w3.org/css-validator/). No errors.  
 
@@ -41,7 +41,7 @@ The project has been tested in mobile view in the following devices without any 
     11	Missing '()' invoking a constructor.
 
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools).  
-I have tested the mobile and desktop versions of my project with Google Lighthouse. With good results.
+I have tested the mobile and desktop versions of my project with Google Lighthouse.
 Please refer to screen shots.  
 
     [mobile](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/a46dcd2e62d7a6bc2bd82621b4a956740bab8ea9/media/mobile_lighthouse.jpg) Screenshot  
@@ -127,12 +127,13 @@ User filling the log in form "Password" section with not enough characters | Err
 User filling the log in form "Username" section correctly | Message "right" appear | Yes
 User filling the log in form "Password" section correctly | Message "right" appear | Yes
 User clicking log in buttons after filling form correctly | Message confirmation appear/ redirecting to "my profile" page |Yes
+If user not register clicking link "Register" next to "Need to registered?" | redirect User to "Register" page | Yes
 
 #### **_Log Out link_**
 
 action taken | expected result | functional 
 ------------ | --------------- | ----------
-If User logged in click "Log out" link | Confirmation log out modal message appear | Yes
+If User logged in click "Log out" link | Confirmation log out modal message appear redirect to "index page. | Yes
 If User logged in click "Cancel" button in modal message | User redirected to "My profile" page | Yes
 If User logged in click "Agree" button in modal message | User redirected to "Index" page | Yes
 
@@ -140,8 +141,8 @@ If User logged in click "Agree" button in modal message | User redirected to "In
 
 action taken | expected result | functional 
 ------------ | --------------- | ----------
-User logged in at "my profile" page | Can view its Username and number of recipes created | Yes
-User logged in at "my profile" page | Can view its recipes as cards with "Edit" and "Delete" buttons | Yes
+User logged at "my profile" page | Can view its Username and number of recipes created | Yes
+User logged at "my profile" page | Can view its recipes as cards with "Edit" and "Delete" buttons | Yes
 User clicking the recipe's card | Single page recipe will open | Yes
 User can delete recipe from card view| Clicking the button "Delete", confirmation via modal to delete | Yes
 User can edit recipe | Clicking the "Edit" button edit page opens | Yes
@@ -152,7 +153,7 @@ User can delete its own account | Clicking the button "Delete account", confirma
 
 action taken | expected result | functional 
 ------------ | --------------- | ----------
-User logged in at "add recipe" page, by filling the form in full and click "Add Recipe" button | Recipe added to account user | Yes
+User logged in at "add recipe" page, by filling the form in full and click "Add Recipe" button | Recipe added to database | Yes
 User not filling the input field "Recipe name" | Message "Please fill in this field" appear in input field | Yes
 User not filling the input field "Course" | Message "Please fill in this field" appear in input field | Yes
 User not filling the input field "Serving" | Message "Please fill in this field" appear in input field | Yes
@@ -172,7 +173,7 @@ action taken | expected result | functional
 ------------ | --------------- | ----------
 User clicking "Edit" button on recipe card  | User redirected to "Edit recipe" page | Yes
 User clicking "Edit" button on "Single recipe" page  | User redirected to "Edit recipe" page | Yes
-User by filling the form in full and click "Submit" button | Recipe edited added to account user | Yes
+User by filling the form in full and click "Submit" button | Recipe edited added to database | Yes
 User not filling the input field "Recipe name" | Message "Please fill in this field" appear in input field | Yes
 User not filling the input field "Course" | Message "Please fill in this field" appear in input field | Yes
 User not filling the input field "Serving" | Message "Please fill in this field" appear in input field | Yes
@@ -204,9 +205,9 @@ user story | action taken | expected result | functional
 2 | As a User not register clicking the recipe's card | "Single recipe" page will open | Yes
 3 | As a User not register by filling in full and correctly the contact form | User can contact Developer | Yes
 4 | As a User registered, by filling in full and correctly the log in form | User logged in |Yes
-5| As a User logged in can add recipe, by filling the form in full and click "Add Recipe" button | Recipe added to account user | Yes
+5| As a User logged in can add recipe, by filling the form in full and click "Add Recipe" button | Recipe added to database | Yes
 6 | As a User logged in | User can see all recipes | Yes
-7 | As a User logged in filling the form edit recipe in full and click "Submit" button | Recipe edited added to account user | Yes
+7 | As a User logged in filling the form edit recipe in full and click "Submit" button | Recipe edited added to database | Yes
 8 | As a User logged in can delete recipe from card view| Clicking the button "Delete", confirmation via modal to delete | Yes
 9 | As a User logged in can delete its own account | Clicking the button "Delete account", confirmation via modal to delete | Yes
 10 | As a User logged in click "Log out" link | Confirmation log out modal message appear | Yes
@@ -218,12 +219,13 @@ user story | action taken | expected result | functional
 #### **_Database_**
 action taken | expected result | functional 
 ------------ | --------------- | ----------
-Deleting recipe via Admin log in | Only Recipe deleted from recipe collection User author of recipe not deleted | Yes
-Deleting recipe via User log in | Only Recipe deleted from recipe collection User author of recipe not deleted | Yes
+Deleting recipe via Admin logged in | Only Recipe deleted from recipe collection. User author of recipe not deleted | Yes
+Deleting recipe via User logged in | Only Recipe deleted from recipe collection. User author of recipe not deleted | Yes
 Deleting account via User log in | Only account deleted from user collection recipes not deleted | Yes
-Add recipe via User or Admin | Recipe added recipe collection correctly | Yes
+Add recipe via User or Admin | Recipe added to recipe collection correctly | Yes
 Register account | User added to User collection | Yes
 
-#### **_Database_**
+#### **_Error pages_**
 action taken | expected result | functional 
 ------------ | --------------- | ----------
+Add an unexisting page on URL ending | page 404 shown to user | Yes 
