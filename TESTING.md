@@ -224,3 +224,6 @@ Deleting account via User log in | Only account deleted from user collection rec
 Add recipe via User or Admin | Recipe added recipe collection correctly | Yes
 Register account | User added to User collection | Yes
 
+#### **_Database_**
+action taken | expected result | functional 
+------------ | --------------- | ----------
