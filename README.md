@@ -1,6 +1,6 @@
 Python and Data Centric Development Milestone Project 3 - Code Institute
 
-![Screenshotproject](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/984242f8679d6968aee4ba64009a9ba35c0230c1/media/ms3_screenshot.png)
+![Screenshotproject](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/2e5c67fc81a4db1b16a40d8e0b9e38d69461f289/media/ms3_screenshot.png)
 
 # **_Nonna's Kitchen_**
 
