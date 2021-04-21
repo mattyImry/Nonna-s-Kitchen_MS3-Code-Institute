@@ -24,6 +24,7 @@ The project has been tested in mobile view in the following devices without any 
 ### **_Automated testing_**
 
 * HTML pages tested with [W3C HTML Validator](https://validator.w3.org). I had warning on regards sections that needed heading. Due to the fact that the heading was outside the section for layout reasons. Modified the position of the section warning removed.
+To test the page "My profile" I had to copy the HTML code from Devtool into validator due to error 500 from validator when testing. 
 
 * CSS file has been tested with [W3C CSS validator](https://jigsaw.w3.org/css-validator/). No errors.  
 
@@ -42,7 +43,7 @@ The project has been tested in mobile view in the following devices without any 
 
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools).  
 I have tested the mobile and desktop versions of my project with Google Lighthouse.
-Please refer to screen shots.  
+Please refer to screen shots. I have noticed a significant difference when testing the project with Lighthouse if testing from the port 8080 in Gitpod or from Heroku. The mobile version has a performance of 78% if tested from Heroku, 98% if tested from Gitpod. Testing on the desktop the performarnce is only reduced by 3%.
 
     [mobile](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/a46dcd2e62d7a6bc2bd82621b4a956740bab8ea9/media/mobile_lighthouse.jpg) Screenshot  
 
@@ -213,7 +214,7 @@ user story | action taken | expected result | functional
 10 | As a User logged in click "Log out" link | Confirmation log out modal message appear | Yes
 11 | As a User logged in by filling the form contact us in full and click "Send" button | Modal message "Thank you! Your message was sent"  | Yes
 12 | As a Developer I can view all User recipe | By logging in or not via "index" page | Yes
-13 | As the Admin can delete recpes | Via "Delete" button in recipes cards | Yes
+13 | As the Admin can delete recipes | Via "Delete" button in recipes cards | Yes
 
 
 #### **_Database_**
@@ -228,4 +229,4 @@ Register account | User added to User collection | Yes
 #### **_Error pages_**
 action taken | expected result | functional 
 ------------ | --------------- | ----------
-Add an unexisting page on URL ending | page 404 shown to user | Yes 
+Add an unexisting name on URL ending | page 404 shown to user | Yes 
