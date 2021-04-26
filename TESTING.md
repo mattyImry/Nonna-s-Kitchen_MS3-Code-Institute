@@ -101,7 +101,7 @@ action taken | expected result | functional
 If User is logged in  | User can see buttons "Edit" "Cancel" at end of the recipe's page | Yes
 If User is logged in clicking "Edit" button | Page to edit recipe's open | Yes
 If User is logged in clicking cancel button | User redirected to index page | Yes
-If Admin is logged in  | Admin can see buttons "Edit" "Cancel" at end of the recipe's page | Yes
+If Admin is logged in | Admin can see buttons "Edit" "Cancel" at end of the recipe's page | Yes
 If Admin is logged in clicking "Edit" button | Page to edit recipe's open | Yes
 If Admin is logged in clicking cancel button | Admin redirected to index page | Yes
 If User is not logged in buttons wont show | Buttons not showing |Yes
@@ -134,7 +134,7 @@ If user not register clicking link "Register" next to "Need to registered?" | re
 
 action taken | expected result | functional 
 ------------ | --------------- | ----------
-If User logged in click "Log out" link | Confirmation log out modal message appear redirect to "index page. | Yes
+If User logged in click "Log out" link | Confirmation log out modal message appear redirect to "Index" page. | Yes
 If User logged in click "Cancel" button in modal message | User redirected to "My profile" page | Yes
 If User logged in click "Agree" button in modal message | User redirected to "Index" page | Yes
 
@@ -213,7 +213,7 @@ user story | action taken | expected result | functional
 9 | As a User logged in can delete its own account | Clicking the button "Delete account", confirmation via modal to delete | Yes
 10 | As a User logged in click "Log out" link | Confirmation log out modal message appear | Yes
 11 | As a User logged in by filling the form contact us in full and click "Send" button | Modal message "Thank you! Your message was sent"  | Yes
-12 | As a Developer I can view all User recipe | By logging in or not via "index" page | Yes
+12 | As a Developer I can view all User recipe | By logging in or not via "Index" page | Yes
 13 | As the Admin can delete recipes | Via "Delete" button in recipes cards | Yes
 
 

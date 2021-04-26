@@ -38,7 +38,7 @@
                                 <div class="brown-text lighten-4 list-card"><i class="fas fa-hourglass icon"></i><span class="class-list"> Cook Time:</span> {{ recipe.cook_time }}</div>
                                 <div class="brown-text lighten-4 list-card"><i class="fas fa-exclamation icon"></i><span class="class-list"> Difficulty:</span> {{ recipe.difficulty }}</div>
                                 <div class="brown-text lighten-4 list-card"> <i class="fas fa-leaf icon"></i><span class="class-list"> Vegetarian:</span> {{ recipe.is_vegetarian }}</div>
-                                <div class="brown-text lighten-4 list-card"> <i class="fas fa-user-check icon"></i><span class="class-list"> Author:</span> {{ recipe.author }}</div>
+                                <div class="brown-text lighten-4 list-card"> <i class="fas fa-user-check icon"></i><span class="class-list"> Author:</span> {{ recipe.author|capitalize }}</div>
                             </div>
                         </a>                   
                         <div class="row center-align">

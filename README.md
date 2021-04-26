@@ -4,17 +4,17 @@ Python and Data Centric Development Milestone Project 3 - Code Institute
 
 # **_Nonna's Kitchen_**
 
-This project is my third Milestone Project for the [Code Institute](https://codeinstitute.net/) Full Stack Software Developer Diploma. This project is created to demonstate my ability to design and implement back-end functionality with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/). Data is stored in [MongoDB](https://www.mongodb.com/) a document-base database. I will be following the CRUD principles Create, Read, Update and Delete. With this priciples I can allow the User to store and manipulate his recipes in the database.
+This project is my third Milestone Project for the [Code Institute](https://codeinstitute.net/) Full Stack Software Developer Diploma. This project is created to demonstate my ability to design and implement back-end functionality with the use of [Python3](https://www.python.org/download/releases/3.0/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/). Data is stored in [MongoDB](https://www.mongodb.com/) a document-based database. I will be following the CRUD principles Create, Read, Update and Delete. With this priciples I can allow the User to store and manipulate his recipes in the database.
 The deployed application can be accessed [here](https://nonna-kitchen-ms3.herokuapp.com/). 
 
 ## **_UX_**  
 ### **_Strategy / Site Owner story_**
 
-I have designed this website to allow the User to create, read, update and delete recipes. The main Users will be people that love cooking and like to try new recipes. The Users can come to the website anytime to view the recipes written by themselves or by other users. Without registering the casual User can only view other Users' recipes. If the User decides to register will be able to create, store, modify and delete his own recipes, basically creating his own recipe book. There will be also an Admin functionality only for maintenance purposes. I have also created this website, as for the Developer I can collect other's Users recipes and try them myself. The main type of recipes created by the Developer will be Italian but any other type of cusine is welcome.  
+I have designed this website to allow the User to create, read, update and delete recipes. The main Users will be people that love cooking and like to try new recipes. The Users can come to the website anytime to view the recipes written by themselves or by other users. Without registering, the casual User can only view other Users' recipes. If the User decides to register they will be able to create, store, modify and delete their own recipes, basically creating their own recipe book. There will be also an Admin functionality only for maintenance purposes. I have also created this website so that I can collect other Users' recipes and try them myself. The main type of recipes created by the Developer will be Italian but any other type of cuisine is welcome.  
 
 #### **_Data schema_**
-The data is stored by using [MongoDB](https://www.mongodb.com/). The documents stored in collections in MongoDB are more flexible than SQL databases. Documents can be modified also during the development. I have created two collections. The first one is collection "recipes". This collection holds all the informations needed to prepare the recipes. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database_recipes.jpg) to view a screenshot of the recipes collection.  
-The second one is collection "Users". This collection will hold the username of the User and a password. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database_users.jpg) to view a screenshot of the users collection.  
+The data is stored by using [MongoDB](https://www.mongodb.com/). The documents stored in collections in MongoDB are more flexible than SQL databases. Documents can be modified also during the development. I have created two collections. The first one is collection "recipes". This collection holds all the information needed to prepare the recipes. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database_recipes.jpg) to view a screenshot of the recipes collection.  
+The second one is collection "Users". This collection will hold the username of the User and a password. Click [here](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/media/database_users.jpg) to view a screenshot of the Users collection.  
 The connection between the two collections is achived by the `key` "author" stored in the recipes collection which is the same as the `key` "username" in the users collection. This key will guarantee that every recipe created will be only connected to the user that created it.
 
 #### **_Security_**
@@ -28,10 +28,10 @@ Features that I want to implement are:
 
 *  CRUD operations to allow Users to interact with the application.  
 *  Ability for the User and developer to create a recipe
-*  Ability for the User and developer read a recipe
-*  Ability for the User and developer update a recipe
-*  Ability for the User and developer delete a recipe
-*  Ability for the Users and developer register an account.
+*  Ability for the User and developer to read a recipe
+*  Ability for the User and developer to update a recipe
+*  Ability for the User and developer to delete a recipe
+*  Ability for the Users and developer to register an account.
 *  Ability for the Users and developer to search recipes.
 *  Ability for the Users to contact the Developer with EmailJs functionality.
 *  Ability for the Admin to delete recipes.
@@ -52,13 +52,11 @@ Features that I want to implement are:
 
 ### **_Skeleton_**
 
-* The recipes will be presented with all the informations needed for the preparation on a card style format for easy navigation. 
+* The recipes will be presented with all the informations needed for the preparation in a card style format for easy visualization. 
 
-* To add the recipes to the website a minimalistic style form will be use.  
+* To add the recipes to the website a minimalistic style form will be used.  
 
 * A search function will be present for all the Users, logged in or not, in the main page to search the recipes database.
-
-* A search function will be present in the profile page. The profile page will only be visible when the user is logged in.
 
 * The Users can use the Navigation bar to navigate the different sections within the website.
 
@@ -68,7 +66,7 @@ Features that I want to implement are:
 
 * On the footer a link for directing the Users to the contact page will always be present.
 
-* On the footer two links will be present to redirect the Users to the developer LinkedIn acoount and GitHub account.
+* On the footer two links will be present to redirect the Users to the developer LinkedIn account and GitHub account.
 
 * The logo and "Home" link in the Navigation bar will redirect the Users to the main page and will always be present.
 
@@ -78,7 +76,7 @@ Features that I want to implement are:
 ### **_Surface_**
 
 The website uses [Materialize](https://materializecss.com/) as a framework. I have decided to use it because of the classic design that many users today are expecting from any website and I will be able to achive mobile first design.
-The pages will looks like they are compose by cards. 
+The pages will looks like they are composed by cards. 
 The color scheme is very minimal with these colors used:  
 * #3e2723 is used for title's texts and borders for buttons and cards.
 * #d7ccc8 is used for texts
@@ -95,8 +93,8 @@ Font "Raleway" has been used for text in paragraphs, messages and smaller titles
 Link to Wireframes folder: [Wireframes](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/master/wireframes/nonna_%20kitchen-%20wireframes.pdf)
 
 
-During the planning stage I have created a log out page as seen in the Wireframes. After consulting with my mentor I was advise that it was a better user experience if the User logs out to be redirected to the main page as a users logged out. This is because if the user logs out has probably completed whats intended and can leave the website. If the user logged out by mistake the log in link is present in the navbar. I agree with the point made and I have modified the Wireframes.  
-The wireframe for the  single page is not the same as the finished page because during the development of the page I prefered to have a bigger picture of the recipe instead of a small one with the writings floating on the right.
+During the planning stage I have created a log out page as seen in the Wireframes. After consulting with my mentor I was advised that it was a better user experience if the User was redirected to the main page as they logged out. This is because if the user logs out, he has probably completed what's intended and can leave the website. If the user logs out by mistake the log in link is present in the navbar. I agree with the point made and I have modified the Wireframes.  
+The wireframe for the  single page is not the same as the finished page because during the development of the page I preferred to have a bigger picture of the recipe instead of a small one with the writings floating on the right.
 
 ## **_User Story_**
 
@@ -105,9 +103,9 @@ The wireframe for the  single page is not the same as the finished page because 
 3. As a User not registered I want to be able to contact the developer by usign the contact page form.
 4. As a User registered I want to be able to log in to the website.
 5. As a User logged in I want to be able to add recipes.
-6. As a User logged in I want to be able to view my recipe and other users' recipes.
-7. As a User logged in I want to be able to edit my recipe.
-8. As a User logged in I want to be able to delete my recipe.
+6. As a User logged in I want to be able to view my recipes and other users' recipes.
+7. As a User logged in I want to be able to edit my recipes.
+8. As a User logged in I want to be able to delete my recipes.
 9. As a User logged in I want to be able to delete my account.
 10. As a User logged in I want to be able to log out.
 11. As a User logged in I want to be able to contact the developer by using the contact page form.
@@ -118,19 +116,19 @@ The wireframe for the  single page is not the same as the finished page because 
 
 ### **_Existing Features_**
 
-* The navbar has a logo on the left hand corner and the "Home" link that when clicked will direct the User to the main page showing all recipe present in the website. The navbar will show different links depending if the user is logged in or not.  
+* The navbar has a logo on the left hand corner and the "Home" link that when clicked will direct the User to the main page showing all recipes present on the website. The navbar will show different links depending if the user is logged in or not.  
 If the user is logged in the links available will be:
 "Home", "My Profile", "Add Recipe", "Log Out", "Contact Us".  
 If the user is not logged in the links visible will be:
 "Home", "Log In", "Register", "Contact Us".
-On the mobile view the navbar will be showing the logo on the left hand side but the links will be hold in a burger menu rapresented by an arrow pointing down.
+On the mobile view the navbar will be showing the logo on the left hand side but the links will be held in a burger menu represented by an arrow pointing down.
 
 * The website is visible in all screen sizes.
 * The footer will only hold the contact page link via a letter icon and two icons redirect the Users to the developer LinkedIn account and GitHub account.
 * The unregistered Users can register an account via the "Register" page.
 * The register User can log in via the log in link in the navbar.
 * The User can log out via the log out link in the navbar.
-* Any visitor to the website can contact the developer via the contact form in the "Contact us" page which uses [EailJS](https://www.emailjs.com/) . A reply via email to the user, to confirm the message sent, will also be received.
+* Any visitor to the website can contact the developer via the contact form in the "Contact us" page which uses [EmailJS](https://www.emailjs.com/) . A reply via email to the user, to confirm the message sent, will also be received.
 * Any visitor to the website can search recipes via the search functionality in the "Index" page.
 * The logged in User can add his own recipe via the "Add recipe" page. 
 * The logged in User will be able to edit and delete his own recipes from "My profile" page and "Index" page.
@@ -143,7 +141,7 @@ On the mobile view the navbar will be showing the logo on the left hand side but
 
 
 ### **_Features to be implemented_**
-In the future I would like to be able to let the user to download, shared the recipes via social media and via email.
+In the future I would like to be able to let the user download, share the recipes via social media and via email.
 Also I would like to have the functionality to confirm registration via email, reset password if forgotten.
 
 
@@ -178,13 +176,13 @@ For the testing section please refer to [TESTING.md](TESTING.md) file.
 
 ## **_Bugs and fixes_**
 
-* When adding the modal from Materialize I had a problem when deleting the recipe. The recipe deleted wasn't the one intended. I then discover that the modal needs a unique ID. By applying the `recipe._Id` to the id required by the modal, the recipe that gets deleted is now the correct one.
+* When adding the modal from Materialize I had a problem when deleting the recipe. The recipe deleted wasn't the one intended. I then discovered that the modal needs a unique ID. By applying the `recipe._Id` to the id required by the modal, the recipe that gets deleted is now the correct one.
 
-* While testing emialjs even though the code was correct and the cache was cleared the functionality wasn't working. After a few hours worked. I do believe I had a problem with cache not clearing properly.
+* While testing emialjs even though the code was correct and the cache was cleared the functionality wasn't working. After a few hours it worked. I do believe I had a problem with cache not clearing properly.
 
-* When opening the "Edit" page the layout in the Edit form comes back with spaces and sentences not align. But when submitted and viewing the recipe in full the layout of the recipe is correct. I do think it may be how Flask reopen the form. I will try to fix when I have more time.
+* When opening the "Edit" page, the layout in the Edit form comes back with spaces and sentences not aligned. But when viewing the recipe in full, the layout of the recipe is correct. I do think it may be how Flask reopens the form. I will try to fix it when I have more time.
 
-* In the main page when logged in the recipe cards leave spaces empty. This is due to the buttons appering when logged in causing the card to be longer. I will try to have a fixed size card when I will have more time. When noone is logged in the cards are the layed out the expected way.
+* In the main page when logged in the recipe cards leave spaces empty. This is due to the buttons appearing when logged in causing the card to be longer. I will try to have a fixed size card when I will have more time. When no one is logged in the cards are the layed out the expected way.
 
 ## **_Deployment_**
 
