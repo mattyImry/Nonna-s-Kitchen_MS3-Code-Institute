@@ -43,9 +43,9 @@ To test the page "My profile" I had to copy the HTML code from Devtool into vali
 
 * [Google Lighthouse](https://developers.google.com/web/tools/lighthouse#devtools).  
 I have tested the mobile and desktop versions of my project with Google Lighthouse.
-Please refer to screen shots. I have noticed a significant difference when testing the project with Lighthouse if testing from the port 8080 in Gitpod or from Heroku. The mobile version has a performance of 78% if tested from Heroku, 98% if tested from Gitpod. Testing on the desktop the performarnce is only reduced by 3%.
+Please refer to screen shots. I have noticed a significant difference when testing the project with Lighthouse if testing from the port 8080 in Gitpod or from Heroku. The mobile version has a performance of 78% if tested from Heroku, 98% if tested from Gitpod. Testing on the desktop the performarnce is only reduced by 3% if tested from Heroku.
 
-    [mobile](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/a46dcd2e62d7a6bc2bd82621b4a956740bab8ea9/media/mobile_lighthouse.jpg) Screenshot  
+    [mobile](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/234ee71de04782f3515297f9814bab795e0dcbee/media/mobile_lighthouse.jpg) Screenshot 
 
     [desktop](https://github.com/mattyImry/Nonna-s-Kitchen_MS3-Code-Institute/blob/a46dcd2e62d7a6bc2bd82621b4a956740bab8ea9/media/desktop_lighthouse.jpg) Screenshot.
 
